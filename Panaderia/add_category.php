@@ -68,7 +68,7 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>supplier Management</h3>
+            <h3>Administración de Productos</h3>
             <ul>
                 <li><a href="add_stock.php">Añadir Stock/Product</a></li>
                 <li><a href="view_product.php">Ver Stock/Product</a></li>

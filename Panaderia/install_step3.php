@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - User</title>
+    <title>POSNIC - Usiario</title>
 
     <!-- Stylesheets -->
 
@@ -44,7 +44,7 @@
 
         <div id="login-intro" class="fl">
 
-            <h1>User Details </h1>
+            <h1>Detalles de usuario </h1>
 
 
         </div>
@@ -97,21 +97,21 @@ if (isset($_POST['submit']) and isset($_POST['uname']) and isset($_POST['passwor
         <fieldset>
 
             <p>
-                <label>UserName</label>
-                <input type="text" name="uname" id="uname" class="round full-width-input" placeholder="Enter User Name"
+                <label>Nombre de usuario</label>
+                <input type="text" name="uname" id="uname" class="round full-width-input" placeholder="Ingrese su nombre de usuario"
                        autofocus/>
             </p>
 
             <p>
-                <label>Password</label>
+                <label>Contraseña</label>
                 <input type="password" name="password" id="password" class="round full-width-input"
-                       placeholder="Enter Password" autofocus/>
+                       placeholder="Ingrese contraseña" autofocus/>
             </p>
 
             <p>
-                <label>Security Question</label>
-                What's your favorite movie?
-                <input type="text" name="answer" id="answer" class="round full-width-input" placeholder="Enter Answer"
+                <label>Pregunta de seguridad</label>
+                Cual es tu pelicula favorita?
+                <input type="text" name="answer" id="answer" class="round full-width-input" placeholder="Ingrese respuesta"
                        autofocus/>
             </p>
 

@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Panaderia</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
     <!---->
@@ -76,7 +76,7 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Ventas</h3>
+            <h3>Administrador Ventas</h3>
             <ul>
                 <li><a href="add_sales.php">Agregar Ventas</a></li>
                 <li><a href="view_sales.php">Visualizar Ventas</a></li>
@@ -113,7 +113,7 @@ include_once("init.php");
                                                   style="margin-left:5px;"
                                                   value="<?php if (isset($_GET['limit'])) echo $_GET['limit']; else echo "10"; ?>"
                                                   size="3" maxlength="3">
-                            <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                            <input name="go" type="button" value="Ir" class=" round blue my_button  text-upper"
                                    onclick="return confirmLimitSubmit()">
                         </form>
 
@@ -127,7 +127,7 @@ include_once("init.php");
                             <input type="button" name="unselectall" value="DeSelectAll"
                                    class="my_button round blue   text-upper" onClick="uncheckAll()"
                                    style="margin-left:5px;" id="cancelall"/>-->
-								    <input name="dsubmit" type="button" value="Delete Selected"
+								    <input name="dsubmit" type="button" value="Eliminar Seleccionado"
                                    class="my_button round blue   text-upper" style="margin-left:5px;"
                                    onclick="return confirmDeleteSubmit();"/>
 								<!--   <input type="button" name="Deleteall" value="Delect All Records"
@@ -377,12 +377,12 @@ include_once("init.php");
                                 <tr>
                                     <th>No.</th>
                                     <th>Nombre</th>
-                                    <th>Sales Id</th>
+                                    <th>Id Venta</th>
                                     <th>Fecha</th>
-                                    <th>Customer</th>
+                                    <th>Cliente</th>
 
-                                    <th>Payment</th>
-                                    <th>Amount</th>
+                                    <th>Pago</th>
+                                    <th>Costo</th>
                                     <th>Editar /Eliminar</th>
                                     <th>Seleccionar</th>
                                 </tr>

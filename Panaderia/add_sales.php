@@ -76,7 +76,7 @@ include_once("init.php");
 
             <h3>Sales Management</h3>
             <ul>
-                <li><a href="add_sales.php">Add Sales</a></li>
+                <li><a href="add_sales.php">Agregar Ventas</a></li>
                 <li><a href="view_sales.php">View Sales</a></li>
             </ul>
         </div>

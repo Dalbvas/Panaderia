@@ -73,7 +73,7 @@ include_once("init.php");
 
             <h3>Stock Purchase</h3>
             <ul>
-                <li><a href="add_purchase.php">Add Purchase</a></li>
+                <li><a href="add_purchase.php">Agregar Compra</a></li>
                 <li><a href="view_purchase.php">View Purchase </a></li>
 
             </ul>

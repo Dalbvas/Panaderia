@@ -126,7 +126,7 @@ include_once("init.php");
                                     <input type="button" name="unselectall" value="DeSelectAll"
                                            class="my_button round blue   text-upper" onClick="uncheckAll()"
                                            style="margin-left:5px;"/>-->
-                                    <input name="dsubmit" type="button" value="Borrar seleccionado"
+                                    <input name="dsubmit" type="button" value="Borrar selección"
                                            class="my_button round blue   text-upper" style="margin-left:5px;"
                                            onclick="return confirmDeleteSubmit()"/>
 

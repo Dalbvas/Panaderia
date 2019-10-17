@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Report</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 
@@ -71,7 +71,7 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Report</h3>
+            <h3>Reporte</h3>
             <ul>
                 <ul>
                     <li><a></a></li>
@@ -89,9 +89,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Report</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Reporte</h3>
+                    <span class="fr expand-collapse-text">Click para Ocultar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -104,14 +104,14 @@ include_once("init.php");
                                   id="sales_report" target="myNewWinsr">
                                 <tr>
 
-                                    <td><strong>Sales Report </strong></td>
-                                    <td>From</td>
+                                    <td><strong>Reporte de Ventas</strong></td>
+                                    <td>Desde</td>
                                     <td><input name="from_sales_date" type="text" id="from_sales_date"
                                                style="width:80px;"></td>
-                                    <td>To</td>
+                                    <td>Hasta</td>
                                     <td><input name="to_sales_date" type="text" id="to_sales_date" style="width:80px;">
                                     </td>
-                                    <td><div style="padding-left: 15px;"><input class="button round blue image" name="submit" type="button" value="Show" onClick='sales_report_fn();'>
+                                    <td><div style="padding-left: 15px;"><input class="button round blue image" name="submit" type="button" value="Mostrar" onClick='sales_report_fn();'>
                                         </div></td>
 
                                 </tr>
@@ -127,14 +127,14 @@ include_once("init.php");
 
                             <form action="purchase_report.php" method="post" name="purchase_report" target="_blank">
                                 <tr>
-                                    <td><strong>Purchase Report </strong></td>
-                                    <td>From</td>
+                                    <td><strong>Reporte Compras </strong></td>
+                                    <td>Desde</td>
                                     <td><input name="from_purchase_date" type="text" id="from_purchase_date"
                                                style="width:80px;"></td>
-                                    <td>To</td>
+                                    <td>Hasta</td>
                                     <td><input name="to_purchase_date" type="text" id="to_purchase_date"
                                                style="width:80px;"></td>
-                                    <td><div style="padding-left: 15px;"><input class="button round blue image" name="submit" type="button" value="Show" onClick='purchase_report_fn();'>
+                                    <td><div style="padding-left: 15px;"><input class="button round blue image" name="submit" type="button" value="Mostrar" onClick='purchase_report_fn();'>
                                         </div></td>
                                 </tr>
                             </form>
@@ -151,15 +151,15 @@ include_once("init.php");
                             <form action="sales_purchase_report.php" method="post" name="sales_purchase_report"
                                   target="_blank">
                                 <tr>
-                                    <td><strong>Purchase Stocks </strong></td>
-                                    <td>From</td>
+                                    <td><strong>Unidades Compradas</strong></td>
+                                    <td>Desde</td>
                                     <td><input name="from_sales_purchase_date" type="text" id="from_sales_purchase_date"
                                                style="width:80px;"></td>
-                                    <td>To</td>
+                                    <td>Hasta</td>
                                     <td><input name="to_sales_purchase_date" type="text" id="to_sales_purchase_date"
                                                style="width:80px;"></td>
                                     
-                                    <td><div style="padding-left: 15px;"><input  class="button round blue image" name="submit" type="button" value="Show"
+                                    <td><div style="padding-left: 15px;"><input  class="button round blue image" name="submit" type="button" value="Mostrar"
                                                 onClick='sales_purchase_report_fn();'></div></td>
                                 </tr>
                             </form>

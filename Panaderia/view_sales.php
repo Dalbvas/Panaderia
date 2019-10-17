@@ -43,15 +43,14 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-            <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-			<li>
-            <li><a href="view_sales.php" class="active-tab sales-tab">Sales</a></li>
-            <li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-            <li><a href="view_purchase.php" class=" purchase-tab">Purchase</a></li>
-            <li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-            <li><a href="view_product.php" class=" stock-tab">Stocks / Products</a></li>
-            <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-            <li><a href="view_report.php" class="report-tab">Reports</a></li>
+        <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
+            <li><a href="view_sales.php" class="active-tab sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class=" purchase-tab">Compras</a></li>
+            <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+            <li><a href="view_product.php" class=" stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 
@@ -77,10 +76,10 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Sales</h3>
+            <h3>Ventas</h3>
             <ul>
-                <li><a href="add_sales.php">Add Sales</a></li>
-                <li><a href="view_sales.php">View Sales</a></li>
+                <li><a href="add_sales.php">Agregar Ventas</a></li>
+                <li><a href="view_sales.php">Visualizar Ventas</a></li>
 
             </ul>
 
@@ -93,9 +92,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Sales</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Ventas</h3>
+                    <span class="fr expand-collapse-text">Click para Ocultar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -105,9 +104,9 @@ include_once("init.php");
 
                     <table>
                         <form action="" method="post" name="search">
-                            <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                            <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                             &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                               value="Search">
+                                               value="Buscar">
                         </form>
                         <form action="" method="get" name="limit_go">
                             Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
@@ -376,16 +375,16 @@ include_once("init.php");
 
                                 ?>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Stock Name</th>
+                                    <th>No.</th>
+                                    <th>Nombre</th>
                                     <th>Sales Id</th>
-                                    <th>Date</th>
+                                    <th>Fecha</th>
                                     <th>Customer</th>
 
                                     <th>Payment</th>
                                     <th>Amount</th>
-                                    <th>Edit /Delete</th>
-                                    <th>Select</th>
+                                    <th>Editar /Eliminar</th>
+                                    <th>Seleccionar</th>
                                 </tr>
 
                                 <?php
@@ -453,8 +452,9 @@ $count=0;
                 </div>
             </div>
             <div id="footer">
-              <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
-    </p>
+            <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
+            </p>
+
 
             </div>
             <!-- end footer -->

@@ -226,7 +226,7 @@ include_once("init.php");
                     <form name="form1" method="post" id="form1" action="">
                         <input type="hidden" id="posnic_total">
 
-                        <p><strong>Add Sales/Product </strong> - Add New ( Control +2)</p>
+                        <p><strong>Agregar Ventas/Producto </strong> - Agregar Nueva ( Control +2)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <?php

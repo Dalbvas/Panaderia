@@ -70,13 +70,14 @@ include_once("init.php");
 
                 <div class="side-menu fl">
 
-                    <h3>Stock Category Management</h3>
-                    <ul>
-                        <li><a href="add_stock.php">Add Stock/Product</a></li>
-                        <li><a href="view_product.php">View Stock/Product</a></li>
-                        <li><a href="add_category.php">Add Stock Category</a></li>
-                        <li><a href="view_category.php">view Stock Category</a></li>
-                    </ul>
+                <h3>Administración de Productos</h3>
+            <ul>
+                <li><a href="add_stock.php">Añadir Stock/Product</a></li>
+                <li><a href="view_product.php">Ver Stock/Product</a></li>
+                <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
+                <li><a href="view_category.php">Ver Tipo de Producto</a></li>
+            </ul>
+
 
                 </div>
                 <!-- end side-menu -->

@@ -117,7 +117,7 @@
 
 <!-- FOOTER -->
 <div id="footer">
-    <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+    <p>Cualquier incoveniente comunicarse a:<a href="gmail.com">panaderia@gmail.com</a>.
     </p>
 </div>
 <!-- end footer -->

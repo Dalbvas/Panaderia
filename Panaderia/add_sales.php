@@ -42,10 +42,10 @@ include_once("init.php");
 
         <ul id="tabs" class="fl">
         <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
-                <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+                <li><a href="view_sales.php" class="active-tab sales-tab">Ventas</a></li>
                 <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
                 <li><a href="view_purchase.php" class=" purchase-tab">Compras</a></li>
-                <li><a href="view_supplier.php" class="active-tab supplier-tab">Proveedores</a></li>
+                <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
                 <li><a href="view_product.php" class=" stock-tab">Stocks / Productos</a></li>
                 <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
                 <li><a href="view_report.php" class="report-tab">Reportes</a></li>
@@ -74,10 +74,10 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Sales Management</h3>
+            <h3>Administrador Ventas</h3>
             <ul>
                 <li><a href="add_sales.php">Agregar Ventas</a></li>
-                <li><a href="view_sales.php">View Sales</a></li>
+                <li><a href="view_sales.php">Visualizar Ventas</a></li>
             </ul>
         </div>
         <!-- end side-menu -->
@@ -89,9 +89,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add Sales</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Agregar Venta</h3>
+                    <span class="fr expand-collapse-text">Click para Ocultar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -416,7 +416,7 @@ include_once("init.php");
 
 <!-- FOOTER -->
 <div id="footer">
-   <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+    <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
 </div>
 <!-- end footer -->

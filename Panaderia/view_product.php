@@ -322,8 +322,8 @@ include_once("init.php");
                                         ?>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nombre de Stock</th>
-                                            <th>Codigo de Stock</th>
+                                            <th>Nombre</th>
+                                            <th>Codigo</th>
                                             <th>Fecha</th>
                                             <th>Proveedor</th>
                                             <th>Precio de Venta</th>

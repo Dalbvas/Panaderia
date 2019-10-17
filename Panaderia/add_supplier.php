@@ -154,14 +154,14 @@ include_once("init.php");
 
                     <form name="form1" method="post" id="form1" action="">
 
-                        <p><strong>Aagregar detalles de proveedor </strong> - Agregar ( Control + u)</p>
+                        <p><strong>Agregar detalles de proveedor </strong> - Agregar ( Control + u)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td><span class="man">*</span>Nombre:</td>
-                                <td><input name="name" placeholder="ENTER YOUR FULL NAME" type="text" id="name"
+                                <td><input name="name" placeholder="INGRESE NOMBRE COMPLETO" type="text" id="name"
                                            maxlength="200" class="round default-width-input"onKeyPress="return ValidateAlpha(event)"                                           value="<?php echo isset($name) ? $name : ''; ?>"/></td>
                                 <td><span class="man">*</span><b>Contacto</b><b>-1</b></td>
-                                <td><input name="contact1" placeholder="ENTER YOUR CONTACT-1" type="text"
+                                <td><input name="contact1" placeholder="INGRESE CONTACTO-1" type="text"
                                            id="buyingrate" maxlength="20" class="round default-width-input"onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact1) ? $contact1 : ''; ?>"/></td>
                             </tr>
@@ -171,11 +171,11 @@ include_once("init.php");
                             </tr>
                             <tr>
                                 <td>Direccion:</td>
-                                <td><textarea name="address" placeholder="ENTER YOUR ADDRESS" cols="8"
+                                <td><textarea name="address" placeholder="INGRESE DIRECCION" cols="8"
                                               class="round full-width-textarea"><?php echo isset($address) ? $address : ''; ?></textarea>
                                 </td>
                                 <td><b>Contacto</b><b>-2</b></td>
-                                <td><input name="contact2" placeholder="ENTER YOUR CONTACT-2" type="text"
+                                <td><input name="contact2" placeholder="INGRESE CONTACTO-2" type="text"
                                            id="sellingrate" maxlength="20" class="round default-width-input"onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact2) ? $contact2 : ''; ?>"/></td>
                             </tr>
@@ -191,11 +191,11 @@ include_once("init.php");
                                 </td>
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Add">
+                                           name="Submit" value="AGREGAR">
                                     <b>(Control + S)</b>
 
                                 <td align="right"><input class="button round red   text-upper" type="reset" name="Reset"
-                                                         value="Reset"></td>
+                                                         value="REINICIAR"></td>
                             </tr>
                         </table>
                     </form>

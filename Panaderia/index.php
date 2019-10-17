@@ -16,7 +16,7 @@ if (isset($_SESSION['username'])) {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Panaderia - Login</title>
+    <title>Panaderia</title>
 
     <!-- Stylesheets -->
 
@@ -57,8 +57,8 @@ if (isset($_SESSION['username'])) {
 
         <div id="login-intro" class="fl">
 
-            <h1>Login to Dashboard</h1>
-            <h5>Enter your credentials below</h5>
+            <h1>Iniciar Sesión</h1>
+            <h5>Ingrese sus datos</h5>
 
         </div>
         <!-- login-intro -->
@@ -104,18 +104,18 @@ if (isset($_SESSION['username'])) {
             </p>
 
             <p>
-                <label for="login-username">username</label>
-                <input type="text" id="login-username" class="round full-width-input" placeholder="admin"
+                <label for="login-username">Nombre de Usuario</label>
+                <input type="text" id="login-username" class="round full-width-input" placeholder="usuario"
                        name="username" autofocus/>
             </p>
 
             <p>
-                <label for="login-password">password</label>
-                <input type="password" id="login-password" name="password" placeholder="admin"
+                <label for="login-password">Contraseña</label>
+                <input type="password" id="login-password" name="password" placeholder="contraseña"
                        class="round full-width-input"/>
             </p>
 
-            <a href="forget_pass.php" class="button ">Forgot your password?</a>
+            <a href="forget_pass.php" class="button ">¿Olvidaste tu contrseña?</a>
 
             <!--<a href="dashboard.php" class="button round blue image-right ic-right-arrow">LOG IN</a>-->
             <input type="submit" class="button round blue image-right ic-right-arrow" name="submit" value="LOG IN"/>
@@ -123,9 +123,9 @@ if (isset($_SESSION['username'])) {
 
         <br/>
 
-        <div class="information-box round">Just click on the "LOG IN" button to continue, no login information
+        <!--<div class="information-box round">Just click on the "LOG IN" button to continue, no login information
             required.
-        </div>
+        </div>-->
 
     </form>
 

@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Stock</title>
+    <title>Panaderia</title>
 
     <!-- Stylesheets -->
     <!---->

@@ -169,7 +169,7 @@
 
 <!-- FOOTER -->
 <div id="footer">
-    <p>Cualquier incoveniente comunicarse a:<a href="gmail.com">panaderia@gmail.com</a>.
+    <p>Cualquier incoveniente comunicarse a:<a href="gmail.com">it_panaderia@gmail.com</a>.
     </p>
 
 

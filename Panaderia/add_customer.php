@@ -36,10 +36,10 @@ include_once("init.php");
 
         <ul id="tabs" class="fl">
             <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-            <li><a href="view_sales.php" class=" sales-tab">Sales</a></li>
-            <li><a href="view_customers.php" class="active-tab customers-tab">Customers</a></li>
-            <li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-            <li><a href="view_supplier.php" class="  supplier-tab">Supplier</a></li>
+            <li><a href="view_sales.php" class=" sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class="active-tab customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
+            <li><a href="view_supplier.php" class="  supplier-tab">Proveedor</a></li>
             <li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
             <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
             <li><a href="view_report.php" class="report-tab">Reports</a></li>
@@ -83,9 +83,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add Customer</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Agregar cliente</h3>
+                    <span class="fr expand-collapse-text">Click para minimizar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -146,15 +146,15 @@ include_once("init.php");
 
                     <form name="form1" method="post" id="form1" action="">
 
-                        <p><strong>Add Customer Details </strong> - Add New ( Control +A)</p>
+                        <p><strong>Agregar detalles de cliente </strong> - Agregar ( Control + A)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td><span class="man">*</span>Name:</td>
-                                <td><input name="name" placeholder="ENTER YOUR FULL NAME" type="text" id="name"
+                                <td><span class="man">*</span>Nombre:</td>
+                                <td><input name="name" placeholder="INGRESA EL NOMBRE COPLETO" type="text" id="name"
                                            maxlength="200" class="round default-width-input" onkeypress="return lettersOnly(event)"
                                            value="<?php echo isset($name) ? $name : ''; ?>"/></td>
-                                <td><b><span class="man">*</span></b><b>Contact</b><b>-1</b></td>
-                                <td><input name="contact1" placeholder="ENTER YOUR CONTACT1" type="text"
+                                <td><b><span class="man">*</span></b><b>Contacto</b><b>-1</b></td>
+                                <td><input name="contact1" placeholder="INGRESE CONTACTO 1" type="text"
                                            id="buyingrate" maxlength="20" class="round default-width-input" onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact1) ? $contact1 : ''; ?>"/></td>
                             </tr>
@@ -163,12 +163,12 @@ include_once("init.php");
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td><b>Address:</b></td>
-                                <td><textarea name="address" placeholder="ENTER YOUR ADDRESS" cols="15"
+                                <td><b>Direccion:</b></td>
+                                <td><textarea name="address" placeholder="INGRESE DIRECCION " cols="15"
                                               class="round full-width-textarea"><?php echo isset($address) ? $address : ''; ?></textarea>
                                 </td>
-                                <td><b>Contact</b><b>-2</b></td>
-                                <td><input name="contact2" placeholder="ENTER YOUR CONTACT2" type="text"
+                                <td><b>Contacto</b><b>-2</b></td>
+                                <td><input name="contact2" placeholder="INGRESE CONTACTO 2" type="text"
                                            id="sellingrate" maxlength="20" class="round default-width-input" onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact2) ? $contact2 : ''; ?>"/></td>
 
@@ -184,13 +184,13 @@ include_once("init.php");
                                 </td>
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Add">
+                                           name="Submit" value="Agregar">
                                     (Control + S)
                                 <td>
                                     &nbsp;
                                 </td>
                                 <td align="right"><input class="button round red text-upper" type="reset" name="Reset"
-                                                         value="Reset"></td>
+                                                         value="Reiniciar"></td>
                             </tr>
                         </table>
                     </form>
@@ -213,7 +213,7 @@ include_once("init.php");
 
     <!-- FOOTER -->
     <div id="footer">
-       <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+       <p>Cualquier incoveniente comunicarse a:<a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System"> it_panaderia@gmail.com</a>.
     </p>
 
     </div>

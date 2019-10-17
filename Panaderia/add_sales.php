@@ -226,7 +226,7 @@ include_once("init.php");
                     <form name="form1" method="post" id="form1" action="">
                         <input type="hidden" id="posnic_total">
 
-                        <p><strong>Add Sales/Product </strong> - Add New ( Control +2)</p>
+                        <p><strong>Agregar Ventas/Producto </strong> - Agregar Nueva ( Control +2)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <?php
@@ -238,18 +238,18 @@ include_once("init.php");
                                 }
                                   ?>
                                 <?php if($str == ''){?>
-                                <td>Bill no:</td>
+                                <td>Factura no:</td>
                                 <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"
                                            class="round default-width-input" style="width:130px "
                                            value="<?php echo $autoid_new ?>"/></td>
                                 <?php }?>
                                 <?php if($str != ''){?>
-                                <td>Bill no:</td>
+                                <td>Factura no:</td>
                                 <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"
                                            class="round default-width-input" style="width:130px "
                                            value="<?php echo $autoid ?>"/></td>
                                 <?php }?>
-                                <td>Date:</td>
+                                <td>Fecha:</td>
                                 <td><input name="date" id="test1" placeholder="" value="<?php date_default_timezone_set("Asia/Kolkata");echo date('Y-m-d H:i:s');?>"
                                 style="margin-left: 15px;"type="text" id="name" maxlength="200" class="round default-width-input"/>
                                 </td>
@@ -258,15 +258,15 @@ include_once("init.php");
                  
                             </tr>
                             <tr>
-                                <td>Customer:</td>
+                                <td>Cliente:</td>
                                 <td><input name="supplier" placeholder="ENTER CUSTOMER" type="text" id="supplier"
                                            value="anonymous" maxlength="200" class="round default-width-input" style="width:130px "/></td>
 
-                                <td>Address:</td>
+                                <td>Direccion:</td>
                                 <td><input name="address" placeholder="ENTER ADDRESS" type="text" id="address"
                                            value="coast street"maxlength="200" class="round default-width-input"/></td>
 
-                                <td>contact:</td>
+                                <td>Contacto:</td>
                                 <td><input name="contact" placeholder="ENTER CONTACT" type="text" id="contact1"
                                            value="9876543210"maxlength="200" class="round default-width-input"
                                            onkeypress="return numbersonly(event)" style="width:120px "/></td>
@@ -277,11 +277,11 @@ include_once("init.php");
                         <input type="hidden" id="edit_guid">
                         <table class="form">
                             <tr>
-                                <td>Item</td>
-                                <td>Quantity</td>
+                                <td>Articulo</td>
+                                <td>Cantidad</td>
 
-                                <td>Price</td>
-                                <td>Available Stock</td>
+                                <td>Precio</td>
+                                <td>Disponibilidad</td>
                                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</td>
                                 <td> &nbsp;</td>
                             </tr>
@@ -322,17 +322,17 @@ include_once("init.php");
                             <tr>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
-                                <td><input type="checkbox" id="round" onclick="discount_type()">Discount As Amount</td>
+                                <td><input type="checkbox" id="round" onclick="discount_type()">Cantidad Descuento</td>
                             </tr>
                             <tr>
                                 <td> &nbsp;</td>
-                                <td>Discount %<input type="text" maxlength="3" class="round"
+                                <td>Descuento %<input type="text" maxlength="3" class="round"
                                                      onkeyup=" discount_amount(); "
                                                      onkeypress="return numbersonly(event);" name="discount"
                                                      id="discount">
                                 </td>
 
-                                <td>Discount Amount:<input type="text" readonly="readonly"
+                                <td>Cantidad Descuento:<input type="text" readonly="readonly"
                                                            onkeypress="return numbersonly(event);"
                                                            onkeyup=" discount_as_amount(); " class="round"
                                                            id="disacount_amount" name="dis_amount">
@@ -345,7 +345,7 @@ include_once("init.php");
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
-                                <td>Grand Total:<input type="hidden" readonly="readonly" id="grand_total"
+                                <td>Total Descuento:<input type="hidden" readonly="readonly" id="grand_total"
                                                        name="subtotal">
                                     <input type="text" id="main_grand_total" readonly="readonly"
                                            class="round default-width-input" style="text-align:right;width: 120px">
@@ -354,8 +354,8 @@ include_once("init.php");
                             </tr>
                             <tr>
                                 <td> &nbsp;</td>
-                                <td> Tax:<input type="text" id="tax" name="tax" onkeypress="return numbersonly(event);" onkeyup="add_tax();"></td>
-                                <td>Tax Description:<input type="text" name="tax_dis"></td>
+                                <td> Impuesto:<input type="text" id="tax" name="tax" onkeypress="return numbersonly(event);" onkeyup="add_tax();"></td>
+                                <td>Descripcion Impuesto:<input type="text" name="tax_dis"></td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
@@ -364,7 +364,7 @@ include_once("init.php");
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
-                                <td>Payable Amount:<input type="hidden" readonly="readonly" id="grand_total">
+                                <td>Cantidad a Pagar:<input type="hidden" readonly="readonly" id="grand_total">
                                     <input type="text" id="payable_amount" readonly="readonly" name="payable"
                                            class="round default-width-input" style="text-align:right;width: 120px">
                                 </td>
@@ -373,17 +373,17 @@ include_once("init.php");
                         </table>
                         <table class="form">
                             <tr>
-                                <td>Mode &nbsp;</td>
+                                <td>Metodo pago &nbsp;</td>
                                 <td>
                                     <select name="mode">
-                                        <option value="cash">Cash</option>
+                                        <option value="cash">Efectivo</option>
                                         <option value="cheque">Cheque</option>
-                                        <option value="other">Other</option>
+                                        <option value="other">Otro</option>
                                     </select>
                                 </td>                         
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
-                                <td>Description</td>
+                                <td>Descripcion</td>
                                 <td><textarea name="description"></textarea></td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
@@ -393,13 +393,13 @@ include_once("init.php");
                             <tr>
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Add">
+                                           name="Submit" value="Agregar">
                                 </td>
                                 <td> (Control + S)
                                     </td>
                                 <td> &nbsp;</td>
                                 <td> <input class="button round red   text-upper" type="reset" id="Reset" name="Reset"
-                                           value="Reset"></td>
+                                           value="Borrar"></td>
                             </tr>
                         </table>
                     </form>

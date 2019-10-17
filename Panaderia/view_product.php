@@ -74,11 +74,11 @@ include_once("init.php");
 
                     <h3>Stock Management</h3>
                     <ul>
-                        <li><a href="add_stock.php">Add Stock/Product</a></li>
-                        <li><a href="view_product.php">View Stock/Product</a></li>
-                        <li><a href="add_category.php">Add Stock Category</a></li>
-                        <li><a href="view_category.php">view Stock Category</a></li>
-                        <li><a href="view_stock_availability.php">view Stock Available</a></li>
+                        <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
+                        <li><a href="view_product.php">Ver Stock/Product</a></li>
+                        <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
+                        <li><a href="view_category.php">Ver Tipo de Producto</a></li>
+                        <li><a href="view_stock_availability.php">Ver Unidades Dispobiles</a></li>
                     </ul>
 
                 </div>
@@ -90,9 +90,9 @@ include_once("init.php");
 
                         <div class="content-module-heading cf">
 
-                            <h3 class="fl">Stock/Product</h3>
-                            <span class="fr expand-collapse-text">Click to collapse</span>
-                            <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                            <h3 class="fl">Stock/Producto</h3>
+                            <span class="fr expand-collapse-text">Click para Cerrar</span>
+                            <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                         </div>
                         <!-- end content-module-heading -->
@@ -322,14 +322,14 @@ include_once("init.php");
                                         ?>
                                         <tr>
                                             <th>No</th>
-                                            <th>Stock Name</th>
-                                            <th>Stock Id</th>
-                                            <th>Date</th>
-                                            <th>Supplier</th>
-                                            <th>Selling Price</th>
+                                            <th>Nombre de Stock</th>
+                                            <th>Codigo de Stock</th>
+                                            <th>Fecha</th>
+                                            <th>Proveedor</th>
+                                            <th>Precio de Venta</th>
                                             <th>Stock</th>
-                                            <th>Edit /Delete</th>
-                                            <th>Select</th>
+                                            <th>Editar/Eliminar</th>
+                                            <th>Seleccionar</th>
                                         </tr>
 
                                         <?php

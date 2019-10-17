@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Payment</title>
+    <title>Señor pan</title>
 
     <!-- Stylesheets -->
     <!---->
@@ -72,8 +72,8 @@ include_once("init.php");
 
             <h3>Payment</h3>
             <ul>
-                <li><a href="view_payments.php">Payments</a></li>
-                <li><a href="view_out_standing.php">Out standings</a></li>
+                <li><a href="view_payments.php">Pagos</a></li>
+                <li><a href="view_out_standing.php">Pendiente</a></li>
 
             </ul>
 
@@ -86,9 +86,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Payment</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Pago</h3>
+                    <span class="fr expand-collapse-text">Contraer</span>
+                    <span class="fr expand-collapse-text initial-expand">Expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -339,10 +339,10 @@ include_once("init.php");
                                 ?>
                                 <tr>
                                     <th>No</th>
-                                    <th>Transaction Id</th>
-                                    <th>Due Date</th>
+                                    <th>Id Transacción</th>
+                                    <th>Fecha de vencimiento</th>
                                     <th>subtotal</th>
-                                    <th>Payment Received</th>
+                                    <th>Recibo de pago</th>
                                  
 
                                 </tr>

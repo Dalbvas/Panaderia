@@ -74,7 +74,7 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Administrador Ventas</h3>
+            <h3>Administración de Ventas</h3>
             <ul>
                 <li><a href="add_sales.php">Agregar Ventas</a></li>
                 <li><a href="view_sales.php">Visualizar Ventas</a></li>

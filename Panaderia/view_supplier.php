@@ -75,10 +75,10 @@ include_once("init.php");
 
                 <div class="side-menu fl">
 
-                    <h3>supplier Management</h3>
+                    <h3>Administracion de proveedores</h3>
                     <ul>
-                        <li><a href="add_supplier.php">Add supplier</a></li>
-                        <li><a href="view_supplier.php">View supplier</a></li>
+                        <li><a href="add_supplier.php">Agregar proveedor</a></li>
+                        <li><a href="view_supplier.php">Visializar proveedores</a></li>
                     </ul>
 
                 </div>
@@ -90,9 +90,9 @@ include_once("init.php");
 
                         <div class="content-module-heading cf">
 
-                            <h3 class="fl">supplier</h3>
-                            <span class="fr expand-collapse-text">Click to collapse</span>
-                            <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                            <h3 class="fl">Proveedor</h3>
+                            <span class="fr expand-collapse-text">Click para minimizar</span>
+                            <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                         </div>
                         <!-- end content-module-heading -->
@@ -102,17 +102,17 @@ include_once("init.php");
 
                             <table>
                                 <form action="" method="post" name="search">
-                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                                       value="Search">
+                                                       value="Buscar">
                                 </form>
                                 <form action="" method="get" name="limit_go">
-                                    Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                                    Registro por pagina<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                           style="margin-left:5px;"
                                                           value="<?php if (isset($_GET['limit'])) echo $_GET['limit'];
                                                                         else echo "10"; ?>"
                                                           size="3" maxlength="3">
-                                    <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                                    <input name="go" type="button" value="IR" class=" round blue my_button  text-upper"
                                            onclick="return confirmLimitSubmit()">
                                 </form>
 
@@ -321,11 +321,11 @@ include_once("init.php");
                                         ?>
                                         <tr>
                                             <th>No</th>
-                                            <th>Supplier Name</th>
-                                            <th>Contact</th>
+                                            <th>Nombre proveedor</th>
+                                            <th>Contacto</th>
                                             <th>Balance</th>
-                                            <th>Edit /Delete</th>
-                                            <th>Select</th>
+                                            <th>Editar/Borrar</th>
+                                            <th>Seleccionar</th>
                                         </tr>
 
                                         <?php
@@ -371,9 +371,9 @@ include_once("init.php");
                                                 <tr>
                                                     <td align='right'style="width:20%"><?php $end = $no + $co1; ?>
                                                         <?php if($end != ''){ ?>
-                                                        Showing <?php echo $no + 1; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                        Mostrando <?php echo $no + 1; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                                     <?php }else{?>
-                                                    Showing <?php echo $no; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                    Mostrando <?php echo $no; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                                     <?php } ?>
                                                 </tr>
 

@@ -71,10 +71,10 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Stock Purchase</h3>
+            <h3>Realizar compra</h3>
             <ul>
                 <li><a href="add_purchase.php">Agregar Compra</a></li>
-                <li><a href="view_purchase.php">View Purchase </a></li>
+                <li><a href="view_purchase.php">Ver compra  </a></li>
 
             </ul>
         </div>
@@ -86,9 +86,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Purchase</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Compra</h3>
+                    <span class="fr expand-collapse-text">Click para ocultar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -98,16 +98,16 @@ include_once("init.php");
 
                     <table>
                         <form action="" method="post" name="search">
-                            <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                            <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                             &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                               value="Search">
+                                               value="Buscar">
                         </form>
                         <form action="" method="get" name="limit_go">
-                            Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                            Página de registro<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                   style="margin-left:5px;"
                                                   value="<?php if (isset($_GET['limit'])) echo $_GET['limit']; else echo "10"; ?>"
                                                   size="3" maxlength="3">
-                            <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                            <input name="go" type="button" value="Ir" class=" round blue my_button  text-upper"
                                    onclick="return confirmLimitSubmit()">
                         </form>
 
@@ -121,7 +121,7 @@ include_once("init.php");
                             <input type="button" name="unselectall" value="DeSelectAll"
                                    class="my_button round blue   text-upper" onClick="uncheckAll()"
                                    style="margin-left:5px;"/>-->
-                            <input name="dsubmit" type="button" value="Delete Selected"
+                            <input name="dsubmit" type="button" value="Eliminar registro seleccionado"
                                    class="my_button round blue   text-upper" style="margin-left:5px;"
                                    onclick="return confirmDeleteSubmit()"/>
  <!--<input type="button" name="Deleteall" value="Delect All Records"
@@ -355,13 +355,13 @@ include_once("init.php");
                                 ?>
                                 <tr>
                                     <th>No</th>
-                                    <th>Stock Id</th>
-                                    <th>Stock Name</th>
-                                    <th>Date</th>
-                                    <th>Supplier</th>
-                                    <th>Amount</th>
-                                    <th>Edit /Delete</th>
-                                    <th>Select</th>
+                                    <th>Compra Id</th>
+                                    <th>Nombre de compra</th>
+                                    <th>Fecha</th>
+                                    <th>Proveedor</th>
+                                    <th>Cantidad</th>
+                                    <th>Editar/Eliminar</th>
+                                    <th>Seleccionar</th>
                                     
                                     
                                 </tr>

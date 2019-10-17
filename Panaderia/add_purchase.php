@@ -54,9 +54,9 @@ include_once("init.php");
         if (isset($_SESSION['logo'])) {
             echo "upload/" . $_SESSION['logo'];
         } else {
-            echo "upload/posnic.png";
+            echo "upload/posnic.jpg";
         }
-        ?>" alt="Point of Sale"/></a>
+        ?>" alt="Logo"/></a>
 
             </div>
             <!-- end full-width -->
@@ -183,7 +183,7 @@ include_once("init.php");
                             <form name="form1" method="post" id="form1" action="">
                                 <input type="hidden" id="posnic_total">
 
-                                <p><strong>Agregar Stocks/Producto </strong> - Add New ( Control +2)</p>
+                                <p><strong>Agregar Stocks/Producto </strong> - Agregar Nueva ( Control +2)</p>
                                 <table class="form" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                             <?php
@@ -195,14 +195,14 @@ include_once("init.php");
                                 }
                                   ?>
                                         <?php if($str == ''){ ?>
-                                        <td> Compra ID:</td>
+                                        <td>ID Compra:</td>
                                         <td><input name="purchaseid" type="text" id="purchaseid" readonly="readonly" maxlength="200"
                                                    class="round default-width-input" style="width:130px "
                                                    value="<?php echo $autoid_new ?>"/></td>
                                         
                                         <?php } ?>
                                         <?php if($str != ''){ ?>
-                                        <td>Purchase ID:</td>
+                                        <td>ID Compra:</td>
                                         <td><input name="purchaseid" type="text" id="purchaseid" readonly="readonly" maxlength="200"
                                                    class="round default-width-input" style="width:130px "
                                                    value="<?php echo $autoid ?>"/></td>
@@ -279,14 +279,14 @@ include_once("init.php");
 
                                 <table class="form">
                                     <tr>
-                                        <td>Modo de pago &nbsp;</td>
+                                        <td>Metodo de pago &nbsp;</td>
                                         <td>
                                             <select name="mode">
                                                 <option value="cash">Efectivo</option>
                                                 <option value="cash">Tarjeta</option>
                                                 <option value="cheque">Cheque</option>
 
-                                                <option value="other">Other</option>
+                                                <option value="other">Otro</option>
                                             </select>
                                         </td>
                                         <td>Descripción</td>

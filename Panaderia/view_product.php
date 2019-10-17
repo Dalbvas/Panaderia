@@ -102,7 +102,7 @@ include_once("init.php");
 
                             <table>
                                 <form action="" method="post" name="search">
-                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
                                                        value="Search">
                                 </form>

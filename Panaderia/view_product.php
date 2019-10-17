@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Señor Pan</title>
+        <title>Señor Pan - Productos</title>
 
         <!-- Stylesheets -->
         <!---->
@@ -72,7 +72,7 @@ include_once("init.php");
 
                 <div class="side-menu fl">
 
-                    <h3>Stock Management</h3>
+                    <h3>Adminsitración de Productos</h3>
                     <ul>
                         <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
                         <li><a href="view_product.php">Ver Stock/Product</a></li>
@@ -102,7 +102,7 @@ include_once("init.php");
 
                             <table>
                                 <form action="" method="post" name="search">
-                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
                                                        value="Search">
                                 </form>
@@ -322,8 +322,8 @@ include_once("init.php");
                                         ?>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nombre de Stock</th>
-                                            <th>Codigo de Stock</th>
+                                            <th>Nombre</th>
+                                            <th>Codigo</th>
                                             <th>Fecha</th>
                                             <th>Proveedor</th>
                                             <th>Precio de Venta</th>

@@ -126,7 +126,7 @@ if (isset($_POST['submit']) and isset($_POST['uname']) and isset($_POST['passwor
 
 <!-- FOOTER -->
 <div id="footer">
-<p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+<p>Cualquier incoveniente comunicarse a:<a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
 
 

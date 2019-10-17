@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>POSNIC - Add Purchase</title>
+        <title>Señor Pan</title>
 
         <!-- Stylesheets -->
 
@@ -37,14 +37,14 @@ include_once("init.php");
             <div class="page-full-width cf">
 
                 <ul id="tabs" class="fl">
-                    <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-                    <li><a href="view_sales.php" class="sales-tab">Sales</a></li>
-                    <li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-                    <li><a href="view_purchase.php" class="active-tab purchase-tab">Purchase</a></li>
-                    <li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-                    <li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
-                    <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-                    <li><a href="view_report.php" class="report-tab">Reports</a></li>
+                    <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
+                    <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+                    <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+                    <li><a href="view_purchase.php" class="active-tab purchase-tab">Compras</a></li>
+                    <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+                    <li><a href="view_product.php" class="stock-tab"> Stocks/Productos</a></li>
+                    <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+                    <li><a href="view_report.php" class="report-tab">Reportes</a></li>
                 </ul>
                 <!-- end tabs -->
 
@@ -72,10 +72,10 @@ include_once("init.php");
 
                 <div class="side-menu fl">
 
-                    <h3>Purchase Management</h3>
+                    <h3>Gestión de compras</h3>
                     <ul>
-                        <li><a href="add_purchase.php">Add Purchase</a></li>
-                        <li><a href="view_purchase.php">View Purchase </a></li>
+                        <li><a href="add_purchase.php">Agregar compra</a></li>
+                        <li><a href="view_purchase.php">Ver compra</a></li>
                     </ul>
 
                 </div>
@@ -87,9 +87,9 @@ include_once("init.php");
 
                         <div class="content-module-heading cf">
 
-                            <h3 class="fl">Add Purchase</h3>
-                            <span class="fr expand-collapse-text">Click to collapse</span>
-                            <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                            <h3 class="fl">Agregar compra</h3>
+                            <span class="fr expand-collapse-text">Click para ocultar</span>
+                            <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                         </div>
                         <!-- end content-module-heading -->
@@ -183,7 +183,7 @@ include_once("init.php");
                             <form name="form1" method="post" id="form1" action="">
                                 <input type="hidden" id="posnic_total">
 
-                                <p><strong>Add Stock/Product </strong> - Add New ( Control +2)</p>
+                                <p><strong>Agregar Stocks/Producto </strong> - Add New ( Control +2)</p>
                                 <table class="form" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                             <?php
@@ -195,7 +195,7 @@ include_once("init.php");
                                 }
                                   ?>
                                         <?php if($str == ''){ ?>
-                                        <td>Purchase ID:</td>
+                                        <td> Compra ID:</td>
                                         <td><input name="purchaseid" type="text" id="purchaseid" readonly="readonly" maxlength="200"
                                                    class="round default-width-input" style="width:130px "
                                                    value="<?php echo $autoid_new ?>"/></td>
@@ -207,7 +207,7 @@ include_once("init.php");
                                                    class="round default-width-input" style="width:130px "
                                                    value="<?php echo $autoid ?>"/></td>
                                         <?php }?>
-                                        <td>Date:</td>
+                                        <td>Fecha:</td>
                                         <td><input name="date" id="test1" placeholder=""  style="margin-left: 15px;" value="<?php date_default_timezone_set("Asia/Kolkata");
                                         echo date('Y-m-d H:i:s'); ?>"
                                                    type="text" id="name" maxlength="200" class="round default-width-input"/>
@@ -216,16 +216,16 @@ include_once("init.php");
 
                                     </tr>
                                     <tr>
-                                        <td><span class="man">*</span>Supplier:</td>
-                                        <td><input name="supplier" placeholder="ENTER SUPPLIER" type="text" id="supplier"
+                                        <td><span class="man">*</span>Proveedor:</td>
+                                        <td><input name="supplier" placeholder="Añada Proveedor" type="text" id="supplier"
                                                    maxlength="200" class="round default-width-input" style="width:130px "/></td>
 
-                                        <td>Address:</td>
-                                        <td><input name="address" placeholder="ENTER ADDRESS" type="text" id="address"
+                                        <td>Dirección:</td>
+                                        <td><input name="address" placeholder="Añada dirección" type="text" id="address"
                                                    maxlength="200" class="round default-width-input"/></td>
 
-                                        <td>contact:</td>
-                                        <td><input name="contact" placeholder="ENTER CONTACT" type="text" id="contact1"
+                                        <td>Contacto:</td>
+                                        <td><input name="contact" placeholder="Añada contacto" type="text" id="contact1"
                                                    maxlength="200" class="round default-width-input"
                                                    onkeypress="return numbersonly(event)" style="width:120px "/></td>
 
@@ -235,11 +235,11 @@ include_once("init.php");
                                 <input type="hidden" id="edit_guid">
                                 <table class="form">
                                     <tr>
-                                        <td>Item</td>
-                                        <td>Quantity</td>
-                                        <td>Cost</td>
-                                        <td>Selling</td>
-                                        <td>Available Stock</td>
+                                        <td>Articulo</td>
+                                        <td>Cantidad</td>
+                                        <td>Costo</td>
+                                        <td>En venta</td>
+                                        <td>Stock disponible</td>
                                         <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</td>
                                         <td> &nbsp;</td>
                                     </tr>
@@ -279,19 +279,19 @@ include_once("init.php");
 
                                 <table class="form">
                                     <tr>
-                                        <td>Mode &nbsp;</td>
+                                        <td>Modo de pago &nbsp;</td>
                                         <td>
                                             <select name="mode">
-                                                <option value="cash">Cash</option>
-                                                <option value="cash">Cash</option>
+                                                <option value="cash">Efectivo</option>
+                                                <option value="cash">Tarjeta</option>
                                                 <option value="cheque">Cheque</option>
 
                                                 <option value="other">Other</option>
                                             </select>
                                         </td>
-                                        <td>Description</td>
+                                        <td>Descripción</td>
                                         <td><textarea name="description"></textarea></td>
-                                        <td>Grand Total:<input type="hidden" readonly="readonly" id="grand_total"
+                                        <td>Cantidad total:<input type="hidden" readonly="readonly" id="grand_total"
                                                                name="subtotal">
                                             <input type="text" id="main_grand_total" class="round default-width-input"
                                                    onkeypress="return numbersonly(event)" readonly="readonly"
@@ -306,13 +306,13 @@ include_once("init.php");
                                     <tr>
                                         <td>
                                             <input class="button round blue image-right ic-add text-upper" type="submit"
-                                                   name="Submit" value="Add" onclick="return checkValid(this);">
+                                                   name="Submit" value="Añadir" onclick="return checkValid(this);">
                                         </td>
                                         <td> (Control + S)
                                            </td>
                                         <td> &nbsp;</td>
                                         <td> <input class="button round red   text-upper" type="reset" id="Reset" name="Reset"
-                                                   value="Reset"> </td>
+                                                   value="Reiniciar"> </td>
                                     </tr>
                                 </table>
                             </form>

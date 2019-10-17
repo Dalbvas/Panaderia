@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Add Stock Category</title>
+    <title>Señor Pan - Añadir Tipo de Producto</title>
 
     <!-- Stylesheets -->
 
@@ -36,13 +36,13 @@ include_once("init.php");
 
         <ul id="tabs" class="fl">
             <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-            <li><a href="view_sales.php" class="sales-tab">Sales</a></li>
-            <li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-            <li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-            <li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-            <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Products</a></li>
-            <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-            <li><a href="view_report.php" class="report-tab">Reports</a></li>
+            <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
+            <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+            <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 
@@ -68,12 +68,12 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>supplier Management</h3>
+            <h3>Administración de Productos</h3>
             <ul>
-                <li><a href="add_stock.php">Add Stock/Product</a></li>
-                <li><a href="view_product.php">View Stock/Product</a></li>
-                <li><a href="add_category.php">Add Stock Category</a></li>
-                <li><a href="view_category.php">view Stock Category</a></li>
+                <li><a href="add_stock.php">Añadir Stock/Product</a></li>
+                <li><a href="view_product.php">Ver Stock/Product</a></li>
+                <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
+                <li><a href="view_category.php">Ver Tipo de Producto</a></li>
             </ul>
 
         </div>
@@ -85,9 +85,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add Stock Category</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Añadir Tipo de Producto</h3>
+                    <span class="fr expand-collapse-text">Click para cerrar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -148,11 +148,11 @@ include_once("init.php");
 
                     <form name="form1" method="post" id="form1" action="">
 
-                        <p><strong>Add New Category </strong> - Add New ( Control +A)</p>
+                        <p><strong>Añadir Nuevo Tipo </strong> - Añadir Nuevo ( Control +A)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td><span class="man">*</span>Name:</td>
-                                <td><input name="name" placeholder="ENTER CATEGORY NAME" type="text" id="name"
+                                <td><span class="man">*</span>Nombre:</td>
+                                <td><input name="name" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="name"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($name) ? $name : ''; ?>"/></td>
 
@@ -162,8 +162,8 @@ include_once("init.php");
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td>Address</td>
-                                <td><textarea name="address" placeholder="ENTER DESCRIPTION" cols="8"
+                                <td>Descripción:</td>
+                                <td><textarea name="address" placeholder="INGRESE LA DESCRIPCIÓN DEL PRODCUTO" cols="8"
                                               class="round full-width-textarea"><?php echo isset($address) ? $address : ''; ?></textarea>
                                 </td>
 
@@ -180,11 +180,11 @@ include_once("init.php");
                                 </td>
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Add">
+                                           name="Submit" value="Añadir">
                                     (Control + S)
 
                                 <td align="right"><input class="button round red   text-upper" type="reset" name="Reset"
-                                                         value="Reset"></td>
+                                                         value="Limpiar"></td>
                             </tr>
                         </table>
                     </form>
@@ -207,7 +207,7 @@ include_once("init.php");
 
     <!-- FOOTER -->
     <div id="footer">
-        <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+    <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
 
     </div>

@@ -69,7 +69,7 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Quick Links</h3>
+            <h3>Acceso Rápido</h3>
             <ul>
                 <li><a href="add_sales.php">Añadir Ventas</a></li>
                 <li><a href="add_purchase.php">Añadir Compras</a></li>

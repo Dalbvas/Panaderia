@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Señor Pan - Productos</title>
+        <title>Señor Pan</title>
 
         <!-- Stylesheets -->
         <!---->
@@ -104,7 +104,7 @@ include_once("init.php");
                                 <form action="" method="post" name="search">
                                     <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                                       value="Search">
+                                                       value="Buscar">
                                 </form>
                                 <form action="" method="get" name="limit_go">
                                     Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
@@ -112,7 +112,7 @@ include_once("init.php");
                                                           value="<?php if (isset($_GET['limit'])) echo $_GET['limit'];
                                                                         else echo "10"; ?>"
                                                           size="3" maxlength="3">
-                                    <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                                    <input name="go" type="button" value="Ir" class=" round blue my_button  text-upper"
                                            onclick="return confirmLimitSubmit()">
                                 </form>
 
@@ -126,7 +126,7 @@ include_once("init.php");
                                     <input type="button" name="unselectall" value="DeSelectAll"
                                            class="my_button round blue   text-upper" onClick="uncheckAll()"
                                            style="margin-left:5px;"/>-->
-                                    <input name="dsubmit" type="button" value="Delete Selected"
+                                    <input name="dsubmit" type="button" value="Borrar selección"
                                            class="my_button round blue   text-upper" style="margin-left:5px;"
                                            onclick="return confirmDeleteSubmit()"/>
 

@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Dashboard</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 
@@ -69,13 +69,13 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Quick Links</h3>
+            <h3>Acceso Rápido</h3>
             <ul>
-                <li><a href="add_sales.php">Add Sales</a></li>
-                <li><a href="add_purchase.php">Add Purchase</a></li>
-                <li><a href="add_supplier.php">Add Supplier</a></li>
-                <li><a href="add_customer.php">Add Customer</a></li>
-                <li><a href="view_report.php">Report</a></li>
+                <li><a href="add_sales.php">Añadir Ventas</a></li>
+                <li><a href="add_purchase.php">Añadir Compras</a></li>
+                <li><a href="add_supplier.php">Añadir Proveedores</a></li>
+                <li><a href="add_customer.php">Añadir Cliente</a></li>
+                <li><a href="view_report.php">Reportes</a></li>
             </ul>
 
         </div>
@@ -87,9 +87,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Statistics</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Estadísticas</h3>
+                    <span class="fr expand-collapse-text">Click para cerrar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -103,7 +103,7 @@ include_once("init.php");
                             <td width="150" align="left">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td align="left">Total Number of Products</td>
+                            <td align="left">Número de Productos Totales</td>
                             <td align="left"><?php echo $count = $db->countOfAll("stock_avail"); ?>&nbsp;</td>
                         </tr>
                         <tr>
@@ -111,7 +111,7 @@ include_once("init.php");
                             <td align="left">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td align="left">Total Sales Transactions</td>
+                            <td align="left">Total de Ventas</td>
                             <td align="left"><?php echo $count = $db->countOfAll("stock_sales"); ?></td>
                         </tr>
                         <tr>
@@ -119,7 +119,7 @@ include_once("init.php");
                             <td align="left">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td align="left">Total number of Suppliers</td>
+                            <td align="left">Número Total de Proveedores</td>
                             <td align="left"><?php echo $count = $db->countOfAll("supplier_details"); ?></td>
                         </tr>
                         <tr>
@@ -127,7 +127,7 @@ include_once("init.php");
                             <td align="left">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td align="left">Total Number of Customers</td>
+                            <td align="left">Número Total de Clientes</td>
                             <td align="left"><?php echo $count = $db->countOfAll("customer_details"); ?></td>
                         </tr>
                         <tr>
@@ -144,39 +144,39 @@ include_once("init.php");
                            cellpadding="0">
                         <tr>
                             <td>&nbsp;</td>
-                            <td width="250" align="left">Home (Ctrl+0)</td>
-                            <td width="150" align="left">Add Purchase(Ctrl+1)</td>
+                            <td width="250" align="left">Inicio (Ctrl+0)</td>
+                            <td width="150" align="left">Añadir Compra(Ctrl+1)</td>
 
 
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td width="250" align="left">Add Stock(Ctrl+2)</td>
-                            <td align="left">Add Sale(Ctrl+)</td>
+                            <td width="250" align="left">Añadir Producto(Ctrl+2)</td>
+                            <td align="left">Añadir Venta(Ctrl+)</td>
 
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td align="left">Add Category (Ctrl+4 )</td>
-                            <td align="left">Add Supplier (Ctrl+5 )</td>
+                            <td align="left">Añadir Tipo de Producto (Ctrl+4 )</td>
+                            <td align="left">Añadir Proveedor (Ctrl+5 )</td>
 
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td align="left">Add Customer (Ctrl+6)</td>
-                            <td align="left">View Stocks (Ctrl+7)</td>
+                            <td align="left">Añadir Cliente (Ctrl+6)</td>
+                            <td align="left">Ver Stocks (Ctrl+7)</td>
 
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td align="left">View Sales(Ctrl+8)</td>
-                            <td align="left">View Purchase (Ctrl+9)</td>
+                            <td align="left">Ver Ventas(Ctrl+8)</td>
+                            <td align="left">Ver Compras (Ctrl+9)</td>
 
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td align="left">Add New (Ctrl+a)</td>
-                            <td align="left">Save( Ctrl+s )</td>
+                            <td align="left">Añadir Nuevo (Ctrl+a)</td>
+                            <td align="left">Guardar( Ctrl+s )</td>
 
                         </tr>
 
@@ -234,7 +234,7 @@ include_once("init.php");
     </script>
 
 
-    <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+<p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
 
 </div>

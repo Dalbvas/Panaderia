@@ -107,7 +107,7 @@ include_once("init.php");
                                                        value="Buscar">
                                 </form>
                                 <form action="" method="get" name="limit_go">
-                                    Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                                    Registros por Página<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                           style="margin-left:5px;"
                                                           value="<?php if (isset($_GET['limit'])) echo $_GET['limit'];
                                                                         else echo "10"; ?>"

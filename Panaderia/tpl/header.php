@@ -6,13 +6,13 @@
 	
 			<ul id="tabs" class="fl">
 				<li><a href="dashboard.php" class="active-tab dashboard-tab">Dashboard</a></li>
-				<li><a href="page-full-width.php" class="sales-tab">Sales</a></li>
-				<li><a href="page-full-width.php" class="customers-tab">Customers</a></li>
-				<li><a href="page-other.php" class="purchase-tab">Purchase</a></li>
-				<li><a href="page-other.php" class="supplier-tab">Supplier</a></li>
-				<li><a href="page-other.php" class="stock-tab">Stocks / Products</a></li>
-				<li><a href="page-other.php" class="payment-tab">Payments / Outstandings</a></li>
-				<li><a href="page-other.php" class="report-tab">Reports</a></li>
+				<li><a href="page-full-width.php" class="sales-tab">Vetnas</a></li>
+				<li><a href="page-full-width.php" class="customers-tab">Clientes</a></li>
+				<li><a href="page-other.php" class="purchase-tab">Compras</a></li>
+				<li><a href="page-other.php" class="supplier-tab">Proveedores</a></li>
+				<li><a href="page-other.php" class="stock-tab">Stocks / Productos</a></li>
+				<li><a href="page-other.php" class="payment-tab">Pagos</a></li>
+				<li><a href="page-other.php" class="report-tab">Reportes</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->

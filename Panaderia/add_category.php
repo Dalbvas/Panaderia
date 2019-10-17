@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Señor Pan - Añadir Tipo de Producto</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 

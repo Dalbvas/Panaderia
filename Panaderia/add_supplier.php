@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Add Supplier</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 
@@ -72,10 +72,10 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Administracion de proveedores</h3>
+            <h3>Administración de Proveedores</h3>
             <ul>
-                <li><a href="add_supplier.php">Agregar proveedor</a></li>
-                <li><a href="view_supplier.php">Visualizar proveedores</a></li>
+                <li><a href="add_supplier.php">Agregar Proveedor</a></li>
+                <li><a href="view_supplier.php">Ver Proveedor</a></li>
             </ul>
 
         </div>

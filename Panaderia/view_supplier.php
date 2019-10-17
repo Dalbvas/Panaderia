@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Panaderia</title>
+        <title>Señor Pan</title>
 
         <!-- Stylesheets -->
         <!---->
@@ -75,10 +75,10 @@ include_once("init.php");
 
                 <div class="side-menu fl">
 
-                    <h3>Administracion de proveedores</h3>
+                    <h3>Administración de Proveedores</h3>
                     <ul>
-                        <li><a href="add_supplier.php">Agregar proveedor</a></li>
-                        <li><a href="view_supplier.php">Visializar proveedores</a></li>
+                        <li><a href="add_supplier.php">Agregar Proveedor</a></li>
+                        <li><a href="view_supplier.php">Ver Proveedor</a></li>
                     </ul>
 
                 </div>
@@ -91,8 +91,8 @@ include_once("init.php");
                         <div class="content-module-heading cf">
 
                             <h3 class="fl">Proveedor</h3>
-                            <span class="fr expand-collapse-text">Click para minimizar</span>
-                            <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
+                            <span class="fr expand-collapse-text">Click para Ocultar</span>
+                            <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
 
                         </div>
                         <!-- end content-module-heading -->

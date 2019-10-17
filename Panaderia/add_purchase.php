@@ -312,7 +312,7 @@ include_once("init.php");
                                            </td>
                                         <td> &nbsp;</td>
                                         <td> <input class="button round red   text-upper" type="reset" id="Reset" name="Reset"
-                                                   value="Reiniciar"> </td>
+                                                   value="Borrar"> </td>
                                     </tr>
                                 </table>
                             </form>

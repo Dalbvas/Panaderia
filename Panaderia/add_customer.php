@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Add Customer</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 
@@ -68,10 +68,10 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Customers Management</h3>
+            <h3>Administración de Clientes</h3>
             <ul>
-                <li><a href="add_customer.php">Add Customer</a></li>
-                <li><a href="view_customers.php">View Customers</a></li>
+                <li><a href="add_customer.php">Agregar Clientes</a></li>
+                <li><a href="view_customers.php">Visualizar Clientes</a></li>
             </ul>
 
         </div>

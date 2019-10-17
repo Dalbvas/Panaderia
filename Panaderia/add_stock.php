@@ -7,7 +7,7 @@ include_once("init.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>POSNIC - Add Stock Category</title>
+    <title>Señor Pan</title>
 
     <!-- Stylesheets -->
 
@@ -38,13 +38,13 @@ include_once("init.php");
 
         <ul id="tabs" class="fl">
             <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-            <li><a href="view_sales.php" class="sales-tab">Sales</a></li>
-            <li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-            <li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-            <li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-            <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Products</a></li>
-            <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-            <li><a href="view_report.php" class="report-tab">Reports</a></li>
+            <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
+            <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+            <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 
@@ -70,13 +70,13 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Stock Management</h3>
+            <h3>Adminsitración de Productos</h3>
             <ul>
-                <li><a href="add_stock.php">Add Stock/Product</a></li>
-                <li><a href="view_product.php">View Stock/Product</a></li>
-                <li><a href="add_category.php">Add Stock Category</a></li>
-                <li><a href="view_category.php">view Stock Category</a></li>
-                <li><a href="view_stock_availability.php">view Stock Available</a></li>
+                <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
+                <li><a href="view_product.php">Ver Stock/Producto</a></li>
+                <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
+                <li><a href="view_category.php">Ver Tipo de Producto</a></li>
+                <li><a href="view_stock_availability.php">Ver Unidades Disponibles</a></li>
             </ul>
 
         </div>
@@ -89,8 +89,8 @@ include_once("init.php");
                 <div class="content-module-heading cf">
 
                     <h3 class="fl">Add Stock </h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <span class="fr expand-collapse-text">Click para cerrar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -176,39 +176,39 @@ include_once("init.php");
                                 $max = $max + 1;
                                 $autoid = "ST" . $max . "";
                                 ?>
-                                <td><span class="man">*</span>Stock&nbsp;ID:</td>
+                                <td><span class="man">*</span>ID&nbsp;Producto:</td>
                                 <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"
                                            class="round default-width-input"
                                            value="<?php echo isset($autoid) ? $autoid : ''; ?>"/></td>
 
-                                <td><span class="man">*</span>Name:</td>
-                                <td><input name="name" placeholder="ENTER STOCK NAME" type="text" id="name"
+                                <td><span class="man">*</span>Nombre:</td>
+                                <td><input name="name" placeholder="INGRESE NOMBRE DE PRODUCTO" type="text" id="name"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($name) ? $name : ''; ?>"/></td>
 
                             </tr>
                             <tr>
-                                <td><span class="man">*</span>Cost:</td>
-                                <td><input name="cost" placeholder="ENTER COST PRICE" type="text" id="cost"
+                                <td><span class="man">*</span>Costo:</td>
+                                <td><input name="cost" placeholder="INGRESE COSTO" type="text" id="cost"
                                            maxlength="200" class="round default-width-input"
                                            onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
 
-                                <td><span class="man">*</span>Selling&nbsp;Price</td>
-                                <td><input name="sell" placeholder="ENTER SELLING PRICE" type="text" id="sell"
+                                <td><span class="man">*</span>Precio&nbsp;de Venta</td>
+                                <td><input name="sell" placeholder="INGRESE PRECIO DE VENTA" type="text" id="sell"
                                            maxlength="200" class="round default-width-input"
                                            onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($sell) ? $sell : ''; ?>"/></td>
 
                             </tr>
                             <tr>
-                                <td>Supplier:</td>
-                                <td><input name="supplier" placeholder="ENTER SUPPLIER NAME" type="text" id="supplier"
+                                <td>Proveedor:</td>
+                                <td><input name="supplier" placeholder="INGRESE PROVEEDOR" type="text" id="supplier"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($supplier) ? $supplier : ''; ?>"/></td>
 
-                                <td>Category:</td>
-                                <td><input name="category" placeholder="ENTER CATEGORY NAME" type="text" id="category"
+                                <td>Tipo de Producto:</td>
+                                <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($category) ? $category : ''; ?>"/></td>
 
@@ -226,11 +226,11 @@ include_once("init.php");
                                 </td>
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Add">
+                                           name="Submit" value="Añadir">
                                     (Control + S)
 
                                 <td align="right"><input class="button round red   text-upper" type="reset" name="Reset"
-                                                         value="Reset"></td>
+                                                         value="Limpiar"></td>
                             </tr>
                         </table>
                     </form>
@@ -253,7 +253,7 @@ include_once("init.php");
 
     <!-- FOOTER -->
     <div id="footer">
-       <p>Any Queries email to <a href="mailto:syvoliamary@gmail.com?subject=Stock%20Management%20System">syvoliamary@gmail.com</a>.
+    <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
 
     </div>

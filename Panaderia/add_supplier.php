@@ -39,14 +39,14 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-            <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-            <li><a href="view_sales.php" class=" sales-tab">Sales</a></li>
-            <li><a href="view_customers.php" class="customers-tab">Customers</a></li>
-            <li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-            <li><a href="view_supplier.php" class="active-tab   supplier-tab">Supplier</a></li>
-            <li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
-            <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-            <li><a href="view_report.php" class="report-tab">Reports</a></li>
+            <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
+            <li><a href="view_sales.php" class=" sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class="customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class="purchase-tab">Conpras</a></li>
+            <li><a href="view_supplier.php" class="active-tab   supplier-tab">Proveedores</a></li>
+            <li><a href="view_product.php" class="stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 
@@ -87,9 +87,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add supplier</h3>
-                    <span class="fr expand-collapse-text">Click to collapse</span>
-                    <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                    <h3 class="fl">Agregar proveedor</h3>
+                    <span class="fr expand-collapse-text">Click para minimizar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -154,13 +154,13 @@ include_once("init.php");
 
                     <form name="form1" method="post" id="form1" action="">
 
-                        <p><strong>Add Supplier Details </strong> - Add New ( Control +u)</p>
+                        <p><strong>Aagregar detalles de proveedor </strong> - Agregar ( Control + u)</p>
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td><span class="man">*</span>Name:</td>
+                                <td><span class="man">*</span>Nombre:</td>
                                 <td><input name="name" placeholder="ENTER YOUR FULL NAME" type="text" id="name"
                                            maxlength="200" class="round default-width-input"onKeyPress="return ValidateAlpha(event)"                                           value="<?php echo isset($name) ? $name : ''; ?>"/></td>
-                                <td><span class="man">*</span><b>Contact</b><b>-1</b></td>
+                                <td><span class="man">*</span><b>Contacto</b><b>-1</b></td>
                                 <td><input name="contact1" placeholder="ENTER YOUR CONTACT-1" type="text"
                                            id="buyingrate" maxlength="20" class="round default-width-input"onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact1) ? $contact1 : ''; ?>"/></td>
@@ -170,11 +170,11 @@ include_once("init.php");
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td>Address:</td>
+                                <td>Direccion:</td>
                                 <td><textarea name="address" placeholder="ENTER YOUR ADDRESS" cols="8"
                                               class="round full-width-textarea"><?php echo isset($address) ? $address : ''; ?></textarea>
                                 </td>
-                                <td><b>Contact</b><b>-2</b></td>
+                                <td><b>Contacto</b><b>-2</b></td>
                                 <td><input name="contact2" placeholder="ENTER YOUR CONTACT-2" type="text"
                                            id="sellingrate" maxlength="20" class="round default-width-input"onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($contact2) ? $contact2 : ''; ?>"/></td>

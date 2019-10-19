@@ -37,7 +37,7 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-            <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
+            <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
             <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
             <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
             <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>

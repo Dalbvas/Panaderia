@@ -431,6 +431,7 @@ include_once("init.php");
             <div id="footer">
             <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
             </p>
+            </div>
             <!-- end footer -->
 
 </body>

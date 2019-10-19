@@ -34,16 +34,16 @@
                 messages: {
                     name: {
                         required: "Please enter a supplier name",
-                        minlength: "Customer name must be at least 3 characters"
+                        minlength: "El nombre debe ser de por lo menos 3 caracteres"
                     },
                     contact1: {
                         required: "Please enter a contact number",
-                        minlength: "Contact must consist of at least 10 digits",
-                        maxlength: "Contact No should not be more than 13 digits"
+                        minlength: "El contacto debe tener minimo 10 digitos",
+                        maxlength: "El contacto no debe pasar de 13 digitos"
                     },
                     address: {
-                        minlength: "Customer Address must be at least 3 characters long",
-                        maxlength: "Address is too long !"
+                        minlength: "La direccion debe tener un minimo de 3 caracteres",
+                        maxlength: "Direccion demasiado extensa !"
                     }
                 }
             });

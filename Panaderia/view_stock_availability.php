@@ -90,8 +90,8 @@ include_once("init.php");
                         <div class="content-module-heading cf">
 
                             <h3 class="fl">Stock/Product</h3>
-                            <span class="fr expand-collapse-text">Click to collapse</span>
-                            <span class="fr expand-collapse-text initial-expand">Click to expand</span>
+                            <span class="fr expand-collapse-text">Click para Ocultar</span>
+                            <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
 
                         </div>
                         <!-- end content-module-heading -->

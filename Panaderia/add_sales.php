@@ -105,7 +105,7 @@ include_once("init.php");
                         echo $_GET['msg'];
                     }
 
-                    if (isset($_POST['total'])) {
+                    if (isset($_POST['total'])) 
                         $validated_data = $gump->run($_POST);
                         $stock_name = "";
                         $stockid = "";
@@ -217,7 +217,7 @@ include_once("init.php");
                                 
                             }
                             }
-                        }
+                        //}
 
                     
 

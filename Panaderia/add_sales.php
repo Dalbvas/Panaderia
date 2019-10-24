@@ -127,7 +127,7 @@ include_once("init.php");
                                 $db->query("insert into customer_details(customer_name,customer_address,customer_contact1) values('$customer','$address','$contact')");
                             }
                             $stock_name = $_POST['stock_name'];
-                            $quty = $_POST['quty'];
+                            $quantity = $_POST['quantity'];
                             $date = mysqli_real_escape_string($db->connection, $_POST['date']);
                             $sell = $_POST['sell'];
                             $total = $_POST['total'];
@@ -168,7 +168,7 @@ include_once("init.php");
                             }
                             for ($i = 0; $i < count($stock_name); $i++) {
                                 $name1 = $stock_name[$i];
-                                $quantity = $_POST['quty'][$i];
+                                $quantity = $_POST['quantity'][$i];
                                 $rate = $_POST['sell'][$i];
                                 $total = $_POST['total'][$i];
 
@@ -202,7 +202,7 @@ include_once("init.php");
                                     $db->execute("UPDATE stock_avail SET quantity='$amount1' WHERE name='$name1'");
 
                                 } else {
-                                    echo "<br><font color=green size=+1 >There is no enough stock deliver for $name1! Please add stock !</font>";
+                                    echo "<br><font color=green size=+1 >No hay suficiente cantidad de $name1! Por favor agregar mas unidaddes !</font>";
                                 }
 
 
@@ -290,7 +290,7 @@ include_once("init.php");
                                 <td><input name="" type="text" id="item" maxlength="200"
                                            class="round default-width-input " style="width: 150px"/></td>
 
-                                <td><input name="" type="text" id="quty" maxlength="200"
+                                <td><input name="" type="text" id="quantity" maxlength="200"
                                            class="round default-width-input my_with"
                                            onKeyPress="quantity_chnage(event);return numbersonly(event)"
                                            onkeyup="total_amount();unique_check();stock_size();"/></td>

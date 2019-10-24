@@ -75,10 +75,10 @@ include_once("init.php");
                     <h3>Adminsitración de Productos</h3>
                     <ul>
                         <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
-                        <li><a href="view_product.php">Ver Stock/Product</a></li>
+                        <li><a href="view_product.php">Ver Stock/Producto</a></li>
                         <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
                         <li><a href="view_category.php">Ver Tipo de Producto</a></li>
-                        <li><a href="view_stock_availability.php">Ver Unidades Dispobiles</a></li>
+                        <li><a href="view_stock_availability.php">Ver Unidades Disponibles</a></li>
                     </ul>
 
                 </div>

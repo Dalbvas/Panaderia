@@ -37,7 +37,7 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-            <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
+            <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
             <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
             <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
             <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
@@ -88,7 +88,7 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add Stock </h3>
+                    <h3 class="fl">Agregar Stock </h3>
                     <span class="fr expand-collapse-text">Click para cerrar</span>
                     <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
@@ -109,7 +109,8 @@ include_once("init.php");
                             'sell' => 'required|max_len,200',
                             'cost' => 'required|max_len,200',
                             'supplier' => 'max_len,200',
-                            'category' => 'max_len,200'
+                            'category' => 'max_len,200',
+                             'quantity' => 'max_len,200'
 
                         ));
 
@@ -119,7 +120,8 @@ include_once("init.php");
                             'sell' => 'trim|sanitize_string|mysqli_escape',
                             'cost' => 'trim|sanitize_string|mysqli_escape',
                             'category' => 'trim|sanitize_string|mysqli_escape',
-                            'supplier' => 'trim|sanitize_string|mysqli_escape'
+                            'supplier' => 'trim|sanitize_string|mysqli_escape',
+                            'quantity' => 'trim|sanitize_string|mysqli_escape'
 
                         ));
 
@@ -130,6 +132,7 @@ include_once("init.php");
                         $cost = "";
                         $supplier = "";
                         $category = "";
+                        $quantity = "";
 
 
                         if ($validated_data === false) {
@@ -143,18 +146,19 @@ include_once("init.php");
                             $cost = mysqli_real_escape_string($db->connection, $_POST['cost']);
                             $supplier = mysqli_real_escape_string($db->connection, $_POST['supplier']);
                             $category = mysqli_real_escape_string($db->connection, $_POST['category']);
+                            $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
 
 
                             $count = $db->countOf("stock_details", "stock_id ='$stockid'");
                             if ($count == 1) {
-                                echo "<font color=red> Dublicat Entry. Please Verify</font>";
+                                echo "<font color=red> Registro Duplicado. Por favor Verificar</font>";
                             } else {
 
-                                if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name',0,'$supplier','$cost','$sell','$category')")) {
-                                    echo "<br><font color=green size=+1 > [ $name ] Stock Details Added !</font>";
-                                    $db->query("insert into stock_avail(name,quantity) values('$name',0)");
+                                if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name','$quantity','$supplier','$cost','$sell','$category')")) {
+                                    echo "<br><font color=green size=+1 > [ $name ] Producto Agregado !</font>";
+                                    $db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } else
-                                    echo "<br><font color=red size=+1 >Problem in Adding !</font>";
+                                    echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";
 
                             }
 
@@ -211,12 +215,20 @@ include_once("init.php");
                                 <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($category) ? $category : ''; ?>"/></td>
-
+                            </tr>
+                            <tr>
+                                           <td>Unidades:  </td>
+                                <td><input name="quantity" placeholder="INGRESE UNIDADES" type="text" id="quantity"
+                                           maxlength="200" class="round default-width-input"
+                                           value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
+                                           <td></td>
+                            
                             </tr>
 
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
+                                
                             </tr>
 
 
@@ -224,6 +236,7 @@ include_once("init.php");
                                 <td>
                                     &nbsp;
                                 </td>
+                                
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
                                            name="Submit" value="Añadir">

@@ -35,7 +35,7 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-            <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
+            <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
             <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
             <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
             <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
@@ -70,10 +70,11 @@ include_once("init.php");
 
             <h3>Administración de Productos</h3>
             <ul>
-                <li><a href="add_stock.php">Añadir Stock/Product</a></li>
-                <li><a href="view_product.php">Ver Stock/Product</a></li>
+                <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
+                <li><a href="view_product.php">Ver Stock/Producto</a></li>
                 <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
                 <li><a href="view_category.php">Ver Tipo de Producto</a></li>
+                <li><a href="view_stock_availability.php">Ver Unidades Disponibles</a></li>
             </ul>
 
         </div>

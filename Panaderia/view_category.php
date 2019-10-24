@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>POSNIC - Add supplier</title>
+        <title>Señor Pan</title>
 
         <!-- Stylesheets -->
         <!---->
@@ -35,14 +35,14 @@ include_once("init.php");
             <div class="page-full-width cf">
 
                 <ul id="tabs" class="fl">
-                    <li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-                    <li><a href="view_sales.php" class="sales-tab">Sales</a></li>
-                    <li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-                    <li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-                    <li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-                    <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Products</a></li>
-                    <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-                    <li><a href="view_report.php" class="report-tab">Reports</a></li>
+                <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
+                <li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+                <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+                <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
+                <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+                <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Productos</a></li>
+                <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+                <li><a href="view_report.php" class="report-tab">Reportes</a></li>
                 </ul>
                 <!-- end tabs -->
 
@@ -72,10 +72,11 @@ include_once("init.php");
 
                 <h3>Administración de Productos</h3>
             <ul>
-                <li><a href="add_stock.php">Añadir Stock/Product</a></li>
-                <li><a href="view_product.php">Ver Stock/Product</a></li>
+                <li><a href="add_stock.php">Añadir Stock/Producto</a></li>
+                <li><a href="view_product.php">Ver Stock/Producto</a></li>
                 <li><a href="add_category.php">Añadir Tipo de Producto</a></li>
                 <li><a href="view_category.php">Ver Tipo de Producto</a></li>
+                <li><a href="view_stock_availability.php">Ver Unidades Disponibles</a></li>
             </ul>
 
 
@@ -377,9 +378,8 @@ include_once("init.php");
                         </div>
                     </div>
                     <div id="footer">
-                        <p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.
-                        </p>
-
+                    <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
+                    </p>
                     </div>
                     <!-- end footer -->
 

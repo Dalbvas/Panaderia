@@ -107,9 +107,10 @@ include_once("init.php");
                                 $Category = trim(mysqli_real_escape_string($db->connection, $_POST['Category']));
                                 $date = trim(mysqli_real_escape_string($db->connection, $_POST['date']));
                                 $supplier = trim(mysqli_real_escape_string($db->connection, $_POST['supplier']));
+                                $quantity = trim(mysqli_real_escape_string($db->connection, $_POST['stock_quatity']));
 
 
-                                if ($db->query("UPDATE stock_details  SET stock_name ='$name',supplier_id='$supplier',company_price='$cost',selling_price='$sell',category='$Category',date='$date'  where id=$id"))
+                                if ($db->query("UPDATE stock_details  SET stock_name ='$name',supplier_id='$supplier',company_price='$cost',selling_price='$sell',category='$Category',date='$date', $quantity='stock_quatity'  where id=$id"))
                                     echo "<br><font color=green size=+1 > [ $name ] Supplier Details Updated!</font>";
                                 else
                                     echo "<br><font color=red size=+1 >Problem in Updation !</font>";
@@ -171,6 +172,10 @@ include_once("init.php");
                                     <td><input name="date" type="text" id="date" maxlength="20"
                                                class="round default-width-input"
                                                value="<?php echo $line->date; ?>"/></td>
+                                    <td>Cantidad</td>
+                                    <td><input name="quatity" type="text" id="quatity" maxlength="20"
+                                               class="round default-width-input"
+                                               value="<?php echo $line->quantity; ?>"/></td>
                                 </tr>
 
 
@@ -208,9 +213,8 @@ include_once("init.php");
 
     <!-- FOOTER -->
     <div id="footer">
-        <p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.
-        </p>
-
+            <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
+            </p>
     </div>
     <!-- end footer -->
 

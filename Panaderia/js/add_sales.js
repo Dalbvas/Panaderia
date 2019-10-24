@@ -415,6 +415,6 @@ function discount_type() {
             document.getElementById('payable_amount').value = parseFloat(document.getElementById('grand_total').value);
         }
     }
-}/*
+}
 
 

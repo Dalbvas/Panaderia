@@ -215,17 +215,20 @@ include_once("init.php");
                                 <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($category) ? $category : ''; ?>"/></td>
-
-                                           <td>Unidades:</td>
+                            </tr>
+                            <tr>
+                                           <td>Unidades:  </td>
                                 <td><input name="quantity" placeholder="INGRESE UNIDADES" type="text" id="quantity"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
-
+                                           <td></td>
+                            
                             </tr>
 
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
+                                
                             </tr>
 
 
@@ -233,6 +236,7 @@ include_once("init.php");
                                 <td>
                                     &nbsp;
                                 </td>
+                                
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
                                            name="Submit" value="Añadir">

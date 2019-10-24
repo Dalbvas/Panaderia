@@ -88,7 +88,7 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Add Stock </h3>
+                    <h3 class="fl">Agregar Stock </h3>
                     <span class="fr expand-collapse-text">Click para cerrar</span>
                     <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
@@ -151,11 +151,11 @@ include_once("init.php");
 
                             $count = $db->countOf("stock_details", "stock_id ='$stockid'");
                             if ($count == 1) {
-                                echo "<font color=red> Dublicat Entry. Please Verify</font>";
+                                echo "<font color=red> Registro Duplicado. Por favor Verificar</font>";
                             } else {
 
                                 if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name','$quantity','$supplier','$cost','$sell','$category')")) {
-                                    echo "<br><font color=green size=+1 > [ $name ] Stock Details Added !</font>";
+                                    echo "<br><font color=green size=+1 > [ $name ] Producto Agregado !</font>";
                                     $db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } else
                                     echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";

@@ -109,7 +109,8 @@ include_once("init.php");
                             'sell' => 'required|max_len,200',
                             'cost' => 'required|max_len,200',
                             'supplier' => 'max_len,200',
-                            'category' => 'max_len,200'
+                            'category' => 'max_len,200',
+                             'quantity' => 'max_len,200'
 
                         ));
 
@@ -119,7 +120,8 @@ include_once("init.php");
                             'sell' => 'trim|sanitize_string|mysqli_escape',
                             'cost' => 'trim|sanitize_string|mysqli_escape',
                             'category' => 'trim|sanitize_string|mysqli_escape',
-                            'supplier' => 'trim|sanitize_string|mysqli_escape'
+                            'supplier' => 'trim|sanitize_string|mysqli_escape',
+                            'quantity' => 'trim|sanitize_string|mysqli_escape'
 
                         ));
 
@@ -130,6 +132,7 @@ include_once("init.php");
                         $cost = "";
                         $supplier = "";
                         $category = "";
+                        $quantity = "";
 
 
                         if ($validated_data === false) {
@@ -143,6 +146,7 @@ include_once("init.php");
                             $cost = mysqli_real_escape_string($db->connection, $_POST['cost']);
                             $supplier = mysqli_real_escape_string($db->connection, $_POST['supplier']);
                             $category = mysqli_real_escape_string($db->connection, $_POST['category']);
+                            $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
 
 
                             $count = $db->countOf("stock_details", "stock_id ='$stockid'");
@@ -150,9 +154,9 @@ include_once("init.php");
                                 echo "<font color=red> Dublicat Entry. Please Verify</font>";
                             } else {
 
-                                if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name',0,'$supplier','$cost','$sell','$category')")) {
+                                if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name','$quantity','$supplier','$cost','$sell','$category')")) {
                                     echo "<br><font color=green size=+1 > [ $name ] Stock Details Added !</font>";
-                                    $db->query("insert into stock_avail(name,quantity) values('$name',0)");
+                                    $db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } else
                                     echo "<br><font color=red size=+1 >Problem in Adding !</font>";
 
@@ -211,6 +215,11 @@ include_once("init.php");
                                 <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"
                                            maxlength="200" class="round default-width-input"
                                            value="<?php echo isset($category) ? $category : ''; ?>"/></td>
+
+                                           <td>Unidades:</td>
+                                <td><input name="quantity" placeholder="INGRESE UNIDADES" type="text" id="quantity"
+                                           maxlength="200" class="round default-width-input"
+                                           value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
 
                             </tr>
 

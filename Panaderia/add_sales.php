@@ -202,7 +202,7 @@ include_once("init.php");
                                     $db->execute("UPDATE stock_avail SET quantity='$amount1' WHERE name='$name1'");
 
                                 } else {
-                                    echo "<br><font color=green size=+1 >There is no enough stock deliver for $name1! Please add stock !</font>";
+                                    echo "<br><font color=green size=+1 >No hay suficiente cantidad de $name1! Por favor agregar mas unidaddes !</font>";
                                 }
 
 

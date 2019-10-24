@@ -151,10 +151,10 @@ include_once("init.php");
                             } else {
 
                                 if ($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name',0,'$supplier','$cost','$sell','$category')")) {
-                                    echo "<br><font color=green size=+1 > [ $name ] Stock Details Added !</font>";
+                                    echo "<br><font color=green size=+1 > [ $name ] Producto agregado con exito !</font>";
                                     $db->query("insert into stock_avail(name,quantity) values('$name',0)");
                                 } else
-                                    echo "<br><font color=red size=+1 >Problem in Adding !</font>";
+                                    echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";
 
                             }
 

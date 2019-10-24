@@ -134,7 +134,7 @@ function numbersonly(e) {
 
 
 
-/*function remove_row(o) {
+function remove_row(o) {
     var p = o.parentNode.parentNode;
     p.parentNode.removeChild(p);
 }
@@ -330,7 +330,7 @@ function discount_as_amount() {
     discont = parseFloat(document.getElementById('disacount_amount').value);
     /***********************************************/
 
-   /* var result = isNaN(parseFloat(document.getElementById('disacount_amount').value));
+    var result = isNaN(parseFloat(document.getElementById('disacount_amount').value));
     if (result == true)
     {
         document.getElementById('payable_amount').value = parseFloat(document.getElementById('grand_total').value) + tax;
@@ -341,7 +341,7 @@ function discount_as_amount() {
 
 
     /*************************************************/
-    /*if (document.getElementById('grand_total').value != "") {
+    if (document.getElementById('grand_total').value != "") {
         if (parseFloat(document.getElementById('disacount_amount').value) < parseFloat(document.getElementById('grand_total').value)) {
             discont = parseFloat(document.getElementById('disacount_amount').value);
             //--------------------*******************-----------------//

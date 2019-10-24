@@ -158,7 +158,7 @@ include_once("init.php");
                                     echo "<br><font color=green size=+1 > [ $name ] Stock Details Added !</font>";
                                     $db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } else
-                                    echo "<br><font color=red size=+1 >Problem in Adding !</font>";
+                                    echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";
 
                             }
 

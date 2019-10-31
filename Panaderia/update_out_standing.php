@@ -213,9 +213,8 @@ include_once("init.php");
 
     <!-- FOOTER -->
     <div id="footer">
-        <p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.
-        </p>
-
+    <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
+            </p>
     </div>
     <!-- end footer -->
 

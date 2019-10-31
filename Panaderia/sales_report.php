@@ -90,9 +90,9 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                             <td height="20">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="45"><strong>From</strong></td>
+                                        <td width="45"><strong>Desde</strong></td>
                                         <td width="393">&nbsp;<?php echo $_GET['from_sales_date']; ?></td>
-                                        <td width="41"><strong>To</strong></td>
+                                        <td width="41"><strong>Al</strong></td>
                                         <td width="116">&nbsp;<?php echo $_GET['to_sales_date']; ?></td>
                                     </tr>
                                 </table>

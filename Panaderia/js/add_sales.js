@@ -31,14 +31,14 @@
                         minlength: 3,
                         maxlength: 200
                     },
-                    cost: {
+                    /*cost: {
                         required: true,
 
                     },
                     sell: {
                         required: true,
 
-                    }
+                    } */
                 },
                 messages: {
                     name: {

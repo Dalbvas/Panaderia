@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-        $(function () {
+        $(function () 
+        {
             document.getElementById('supplier').focus();
-            $("#supplier").autocomplete("supplier1.php", {
+            $("#supplier").autocomplete("supplier1.php", 
+            {
                 width: 160,
                 autoFill: true,
                 selectFirst: true

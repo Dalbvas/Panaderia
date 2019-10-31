@@ -8,6 +8,53 @@
          submitHandler: function() { alert("submitted!"); }
          });*/
          $(document).ready(function () {
+
+            $("#item").blur(function () {
+                document.getElementById('total').value = document.getElementById('cost').value * document.getElementById('quty').value
+            });
+            $("#item").blur(function () {
+
+
+                $.post('check_item_details.php', {stock_name1: $(this).val()},
+                    function (data) {
+                        $("#cost").val(data.cost);
+                        $("#sell").val(data.sell);
+                        $("#stock").val(data.stock);
+                        $('#guid').val(data.guid);
+                        if (data.cost != undefined)
+                            $("#0").focus();
+
+
+                    }, 'json');
+
+
+            });
+            $("#quty").blur(function () {
+                if (document.getElementById('item').value == "") {
+                    document.getElementById('item').focus();
+                }
+            });
+            $("#supplier").blur(function () {
+
+
+                $.post('check_customer_details.php', {stock_name1: $(this).val()},
+                    function (data) {
+
+                        $("#address").val(data.address);
+                        $("#contact1").val(data.contact1);
+
+                        if (data.address != undefined)
+                            $("#0").focus();
+
+                    }, 'json');
+
+
+            });   
+
+
+
+
+
             $("#supplier").autocomplete("customer1.php", {
                 width: 160,
                 autoFill: true,

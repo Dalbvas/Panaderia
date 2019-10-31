@@ -105,11 +105,12 @@ include_once("init.php");
                             'stockid' => 'required|max_len,200',
                             'sell' => 'required|max_len,200',
                             'cost' => 'required|max_len,200',
-                            'supplier' => 'max_len,200',
+                            
                             'category' => 'max_len,200',
                             'quantity' => 'max_len,200',
                             'date' => 'max_len,200',
                             'seller' => 'max_len,200',
+                            
                             'item' => 'max_len,200'
                              
 
@@ -121,10 +122,11 @@ include_once("init.php");
                             'sell' => 'trim|sanitize_string|mysqli_escape',
                             'cost' => 'trim|sanitize_string|mysqli_escape',
                             'category' => 'trim|sanitize_string|mysqli_escape',
-                            'supplier' => 'trim|sanitize_string|mysqli_escape',
+                            
                             'quantity' => 'trim|sanitize_string|mysqli_escape',
                             'date' => 'trim|sanitize_string|mysqli_escape',
                             'seller' => 'trim|sanitize_string|mysqli_escape',
+                            
                             'item' => 'trim|sanitize_string|mysqli_escape'
                             
 
@@ -135,11 +137,12 @@ include_once("init.php");
                         $stockid = "";
                         $sell = "";
                         $cost = "";
-                        $supplier = "";
+                        
                         $category = "";
                         $quantity = "";
                         $item = "";
                         $date = "";
+                        
                         $seller = "";
                         
 
@@ -153,21 +156,23 @@ include_once("init.php");
                             $stockid = mysqli_real_escape_string($db->connection, $_POST['stockid']);
                             $sell = mysqli_real_escape_string($db->connection, $_POST['sell']);
                             $cost = mysqli_real_escape_string($db->connection, $_POST['cost']);
-                            $supplier = mysqli_real_escape_string($db->connection, $_POST['supplier']);
+                            
                             $category = mysqli_real_escape_string($db->connection, $_POST['category']);
                             $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
                             $date = mysqli_real_escape_string($db->connection, $_POST['date']);
                             $item = mysqli_real_escape_string($db->connection, $_POST['item']);
                             $seller = mysqli_real_escape_string($db->connection, $_POST['seller']);
+
                            
 
                             
                            // $count = $db->countOf("stock_sales", "stock_id ='$stockid'");
-
+                           
                             if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name, seller) values('$stockid', '$quantity', '$name', '$date', '$item','$seller')")) 
                                 {
                                     $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
-                                    echo "<br><font color=green size=+1 > Venta [ $amount] Realizada con exito !</font>";
+                                    echo "<br><font color=green size=+1 > Venta [ $stockid] Realizada con exito !</font>";
+                                    //$db->query("insert into stock_sales(payment) values('$payment')");
                                     //$db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } 
                                 /*
@@ -310,10 +315,10 @@ include_once("init.php");
                             <tr>
                                 <td>Metodo pago &nbsp;</td>
                                 <td>
-                                    <select name="mode">
-                                        <option value="cash">Efectivo</option>
-                                        <option value="cheque">Cheque</option>
-                                        <option value="other">Otro</option>
+                                    <select name="mode" <?php$payment= $_POST['select']?>>
+                                        <option value="Efectivo">Efectivo</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="Otro">Otro</option>
                                     </select>
                                 </td>                         
                          

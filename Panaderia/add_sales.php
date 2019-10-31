@@ -172,7 +172,7 @@ include_once("init.php");
                                 {
                                     $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
                                     echo "<br><font color=green size=+1 > Venta [ $stockid] Realizada con exito !</font>";
-                                    //$db->query("insert into stock_sales(payment) values('$payment')");
+                                    
                                     //$db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } 
                                 /*
@@ -228,12 +228,12 @@ include_once("init.php");
                                            value="<?php echo isset($name) ? $name : ''; ?>"/></td>
                                 
                                 <td><span class="man"></span>Direccion:</td>
-                                <td><input name="address" placeholder="INGRESE DIRECCION DEL CLIENTE" type="text" id="address"
+                                <td><input name="address" placeholder="INGRESE DIRECCION DEL CLIENTE" readonly="readonly" type="text" id="address"
                                            maxlength="200" class="round default-width-input" style="width:200px;  margin-left: 20px"
                                            value="<?php echo isset($address) ? $address : ''; ?>"/></td>
 
                                 <td><span class="man"></span>Contacto:</td>
-                                <td><input name="contact" placeholder="INGRESE CONTACTO DEL CLIENTE" type="text" id="contact"
+                                <td><input name="contact1" placeholder="INGRESE CONTACTO DEL CLIENTE" readonly="readonly" type="text" id="contact1"
                                            maxlength="200" class="round default-width-input" style="width:120px "
                                            value="<?php echo isset($contact) ? $contact : ''; ?>"/></td>
                             </tr>
@@ -280,8 +280,9 @@ include_once("init.php");
                                            value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
 
 
-                                <td><input name="" type="text" id="stock" readonly="readonly" maxlength="200"
-                                           class="round  my_with"/></td>
+                                <td><input name="stock" type="text" id="stock" readonly="readonly" maxlength="200"
+                                           class="round  my_with"
+                                           value="<?php echo isset($stock) ? $stock : ''; ?>"/></td>
 
 
                                 <td><input name="" type="text" id="total" maxlength="200"

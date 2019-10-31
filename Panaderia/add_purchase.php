@@ -208,7 +208,7 @@ include_once("init.php");
                                                    value="<?php echo $autoid ?>"/></td>
                                         <?php }?>
                                         <td>Fecha:</td>
-                                        <td><input name="date" id="test1" placeholder=""  style="margin-left: 15px;" value="<?php date_default_timezone_set("Asia/Kolkata");
+                                        <td><input name="date" id="test1" placeholder=""  style="margin-left: 15px;" value="<?php date_default_timezone_set("America/Guatemala");
                                         echo date('Y-m-d H:i:s'); ?>"
                                                    type="text" id="name" maxlength="200" class="round default-width-input"/>
                                         </td>

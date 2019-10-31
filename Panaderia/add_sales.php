@@ -108,6 +108,8 @@ include_once("init.php");
                             'supplier' => 'max_len,200',
                             'category' => 'max_len,200',
                             'quantity' => 'max_len,200',
+                            'date' => 'max_len,200',
+                            'seller' => 'max_len,200',
                             'item' => 'max_len,200'
                              
 
@@ -121,6 +123,8 @@ include_once("init.php");
                             'category' => 'trim|sanitize_string|mysqli_escape',
                             'supplier' => 'trim|sanitize_string|mysqli_escape',
                             'quantity' => 'trim|sanitize_string|mysqli_escape',
+                            'date' => 'trim|sanitize_string|mysqli_escape',
+                            'seller' => 'trim|sanitize_string|mysqli_escape',
                             'item' => 'trim|sanitize_string|mysqli_escape'
                             
 
@@ -135,6 +139,8 @@ include_once("init.php");
                         $category = "";
                         $quantity = "";
                         $item = "";
+                        $date = "";
+                        $seller = "";
                         
 
 
@@ -150,13 +156,15 @@ include_once("init.php");
                             $supplier = mysqli_real_escape_string($db->connection, $_POST['supplier']);
                             $category = mysqli_real_escape_string($db->connection, $_POST['category']);
                             $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
+                            $date = mysqli_real_escape_string($db->connection, $_POST['date']);
                             $item = mysqli_real_escape_string($db->connection, $_POST['item']);
+                            $seller = mysqli_real_escape_string($db->connection, $_POST['seller']);
                            
 
                             
                            // $count = $db->countOf("stock_sales", "stock_id ='$stockid'");
 
-                            if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name) values('$stockid', '$quantity', '$name', '$date', '$item')")) 
+                            if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name, seller) values('$stockid', '$quantity', '$name', '$date', '$item','$seller')")) 
                                 {
                                     $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
                                     echo "<br><font color=green size=+1 > Venta [ $amount] Realizada con exito !</font>";
@@ -202,7 +210,8 @@ include_once("init.php");
 
                                 <td>Fecha:</td>
                                 <td><input name="date" id="test1" readonly="readonly" value="<?php date_default_timezone_set("America/Guatemala");echo date('Y-m-d H:i:s');?>"
-                                style="margin-left: 15px;"type="text" id="date" maxlength="200" class="round default-width-input"/>
+                                style="margin-left: 15px;"type="text" id="date" maxlength="200" class="round default-width-input"
+                                value="<?php echo isset($date) ? $date : ''; ?>"/>
                                 </td>
                                 
                                 
@@ -224,17 +233,17 @@ include_once("init.php");
                                            value="<?php echo isset($contact) ? $contact : ''; ?>"/></td>
                             </tr>
                             <tr>
-                                <td><span class="man">*</span>Costo:</td>
-                                <td><input name="cost" placeholder="INGRESE COSTO" type="text" id="cost"
+                                <td><span class="man"></span>Vendedor:</td>
+                                <td><input name="seller" placeholder="VENDEDOR" type="text" id="seller"
+                                           maxlength="200" class="round default-width-input"
+                                           
+                                           value="<?php echo isset($seller) ? $seller : ''; ?>"/></td>
+
+                                <td><span class="man">*</span>Precio&nbsp;de Venta</td>
+                                <td><input name="cost" placeholder="INGRESE PRECIO DE VENTA" type="text" id="cost"
                                            maxlength="200" class="round default-width-input"
                                            onkeypress="return numbersonly(event)"
                                            value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
-
-                                <td><span class="man">*</span>Precio&nbsp;de Venta</td>
-                                <td><input name="sell" placeholder="INGRESE PRECIO DE VENTA" type="text" id="sell"
-                                           maxlength="200" class="round default-width-input"
-                                           onkeypress="return numbersonly(event)"
-                                           value="<?php echo isset($sell) ? $sell : ''; ?>"/></td>
 
                             </tr>
                             </table>
@@ -261,9 +270,9 @@ include_once("init.php");
                                            value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
 
 
-                                <td><input name="" type="text" id="sell"  maxlength="200"
+                                <td><input name="cost" type="text" id="cost"  maxlength="200"
                                            class="round default-width-input my_with"
-                                           /></td>
+                                           value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
 
 
                                 <td><input name="" type="text" id="stock" readonly="readonly" maxlength="200"
@@ -287,9 +296,9 @@ include_once("init.php");
                         <table class="form">
                             <tr>
                                 <td>Proveedor:</td>
-                                <td><input name="supplier" placeholder="INGRESE PROVEEDOR" type="text" id="supplier"
+                                <td><input name="sell" placeholder="INGRESE PROVEEDOR" type="text" id="sell"
                                            maxlength="200" class="round default-width-input"
-                                           value="<?php echo isset($supplier) ? $supplier : ''; ?>"/></td>
+                                           value="<?php echo isset($sell) ? $sell : ''; ?>"/></td>
 
                                 <td>Tipo de Producto:</td>
                                 <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"

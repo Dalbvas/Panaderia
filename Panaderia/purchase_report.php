@@ -21,7 +21,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
             "http://www.w3.org/TR/html4/loose.dtd">
         <html>
         <head>
-            <title>Reporte de Ventas</title>
+            <title>Reporte de Compras</title>
             <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         </head>
         <style type="text/css" media="print">
@@ -55,7 +55,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                     <table width="595" border="0" cellspacing="0" cellpadding="0">
 
                         <tr>
-                            <td height="30" align="center"><strong>Purchase Report</strong></td>
+                            <td height="30" align="center"><strong>Reporte de Compras</strong></td>
                         </tr>
                         <tr>
                             <td height="30" align="center">&nbsp;</td>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                             <td height="20">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="45"><strong>Dede</strong></td>
+                                        <td width="45"><strong>Desde</strong></td>
                                         <td width="393">&nbsp;<?php echo $_GET['from_purchase_date']; ?></td>
                                         <td width="41"><strong>Hasta</strong></td>
                                         <td width="116">&nbsp;<?php echo $_GET['to_purchase_date']; ?></td>

@@ -161,6 +161,6 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
         </html>
         <?php
     } else
-        echo "Please from and to date to process report";
+        echo "Ingrese fecha de inicio y final para realizar el reporte";
 }
 ?>

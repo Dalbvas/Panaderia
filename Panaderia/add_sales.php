@@ -11,7 +11,7 @@ include_once("init.php");
 
     <!-- Stylesheets -->
 
-    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="js/date_pic/date_input.css">
     <link rel="stylesheet" href="lib/auto/css/jquery.autocomplete.css">
 
@@ -24,12 +24,8 @@ include_once("init.php");
     <script src="js/date_pic/jquery.date_input.js"></script>
     <script src="lib/auto/js/jquery.autocomplete.js "></script>
     <script src="js/add_sales.js"></script>
-
-    
-
 </head>
 <body>
-
 <!-- TOP BAR -->
 <?php include_once("tpl/top_bar.php"); ?>
 <!-- end top-bar -->
@@ -41,14 +37,14 @@ include_once("init.php");
     <div class="page-full-width cf">
 
         <ul id="tabs" class="fl">
-        <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
-                <li><a href="view_sales.php" class="active-tab sales-tab">Ventas</a></li>
-                <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
-                <li><a href="view_purchase.php" class=" purchase-tab">Compras</a></li>
-                <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
-                <li><a href="view_product.php" class=" stock-tab">Stocks / Productos</a></li>
-                <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
-                <li><a href="view_report.php" class="report-tab">Reportes</a></li>
+            <li><a href="dashboard.php" class="dashboard-tab">Tablero</a></li>
+            <li><a href="view_sales.php" class="active-tab sales-tab">Ventas</a></li>
+            <li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+            <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
+            <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
+            <li><a href="view_product.php" class="stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 
@@ -74,14 +70,14 @@ include_once("init.php");
 
         <div class="side-menu fl">
 
-            <h3>Administración de Ventas</h3>
+            <h3>Adminsitración de Ventas</h3>
             <ul>
                 <li><a href="add_sales.php">Agregar Ventas</a></li>
                 <li><a href="view_sales.php">Visualizar Ventas</a></li>
             </ul>
+
         </div>
         <!-- end side-menu -->
-        
 
         <div class="side-content fr">
 
@@ -89,9 +85,9 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Agregar Venta</h3>
-                    <span class="fr expand-collapse-text">Click para Ocultar</span>
-                    <span class="fr expand-collapse-text initial-expand">Click para Expandir</span>
+                    <h3 class="fl">Agregar Stock </h3>
+                    <span class="fr expand-collapse-text">Click para cerrar</span>
+                    <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 
                 </div>
                 <!-- end content-module-heading -->
@@ -101,199 +97,171 @@ include_once("init.php");
 
                     <?php
                     //Gump is libarary for Validatoin
-                    if (isset($_GET['msg'])) {
-                        echo $_GET['msg'];
-                    }
 
-                    if (isset($_POST['total'])) {
+                    if (isset($_POST['name'])) {
+                        $_POST = $gump->sanitize($_POST);
+                        $gump->validation_rules(array(
+                            'name' => 'required|max_len,100|min_len,3',
+                            'stockid' => 'required|max_len,200',
+                            'sell' => 'required|max_len,200',
+                            'cost' => 'required|max_len,200',
+                            'date' => 'max_len,200',
+                            'supplier' => 'max_len,200',
+                            'category' => 'max_len,200',
+                            'quantity' => 'max_len,200',
+                            'item' => 'max_len,200'
+                             
+
+                        ));
+
+                        $gump->filter_rules(array(
+                            'name' => 'trim|sanitize_string|mysqli_escape',
+                            'stockid' => 'trim|sanitize_string|mysqli_escape',
+                            'sell' => 'trim|sanitize_string|mysqli_escape',
+                            'cost' => 'trim|sanitize_string|mysqli_escape',
+                            'category' => 'trim|sanitize_string|mysqli_escape',
+                            'date' => 'trim|sanitize_string|mysqli_escape',
+                            'supplier' => 'trim|sanitize_string|mysqli_escape',
+                            'quantity' => 'trim|sanitize_string|mysqli_escape',
+                            'item' => 'trim|sanitize_string|mysqli_escape'
+                            
+
+                        ));
+
                         $validated_data = $gump->run($_POST);
-                        $stock_name = "";
+                        $name = "";
                         $stockid = "";
-                        $payment = "";
-                        $bill_no = "";
+                        $sell = "";
+                        $cost = "";
+                        $supplier = "";
+                        $category = "";
+                        $quantity = "";
+                        $item = "";
+                        $date = "";
+                    
+
 
                         if ($validated_data === false) {
                             echo $gump->get_readable_errors(true);
                         } else {
-                            $username = $_SESSION['username'];
 
+
+                            $name = mysqli_real_escape_string($db->connection, $_POST['name']);
                             $stockid = mysqli_real_escape_string($db->connection, $_POST['stockid']);
-                            //$bill_no = mysqli_real_escape_string($db->connection, $_POST['bill_no']);
-                            $customer = mysqli_real_escape_string($db->connection, $_POST['supplier']);
-                            $address = mysqli_real_escape_string($db->connection, $_POST['address']);
-                            $contact = mysqli_real_escape_string($db->connection, $_POST['contact']);
-                            $count = $db->countOf("customer_details", "customer_name='$customer'");
-                            if ($count == 0) {
-                                $db->query("insert into customer_details(customer_name,customer_address,customer_contact1) values('$customer','$address','$contact')");
-                            }
-                            $stock_name = $_POST['stock_name'];
-                            $quty = $_POST['quty'];
-                            $date = mysqli_real_escape_string($db->connection, $_POST['date']);
-                            $sell = $_POST['sell'];
-                            $total = $_POST['total'];
-                            $payable = $_POST['subtotal'];
-                            $description = mysqli_real_escape_string($db->connection, $_POST['description']);
-                            //$due = mysqli_real_escape_string($db->connection, $_POST['duedate']);
-                            //$payment = mysqli_real_escape_string($db->connection, $_POST['payment']);
-                            $discount = mysqli_real_escape_string($db->connection, $_POST['discount']);
-                            if ($discount == "") {
-                                $discount = 00;
-                            }
-                            $dis_amount = mysqli_real_escape_string($db->connection, $_POST['dis_amount']);
-                            if ($dis_amount == "") {
-                                $dis_amount = 00;
-                            }
-                            $subtotal = mysqli_real_escape_string($db->connection, $_POST['payable']);
-                            //$balance = mysqli_real_escape_string($db->connection, $_POST['balance']);
-                            $mode = mysqli_real_escape_string($db->connection, $_POST['mode']);
-                            $tax = mysqli_real_escape_string($db->connection, $_POST['tax']);
-                            if ($tax == "") {
-                                $tax = 00;
-                            }
-                            $tax_dis = mysqli_real_escape_string($db->connection, $_POST['tax_dis']);
-                            $temp_balance = $db->queryUniqueValue("SELECT balance FROM customer_details WHERE customer_name='$customer'");
-                            //$temp_balance = (int)$temp_balance + (int)$balance;
-                            $db->execute("UPDATE customer_details SET balance=$temp_balance WHERE customer_name='$customer'");
-                            //$selected_date = $_POST['due'];
-                            //$selected_date = strtotime($selected_date);
-                            //$mysqldate = date('Y-m-d H:i:s', $selected_date);
-                            //$due = $mysqldate;
-                            $str = $db->maxOfAll("transactionid", "stock_sales");
-                          
+                            $sell = mysqli_real_escape_string($db->connection, $_POST['sell']);
+                            $cost = mysqli_real_escape_string($db->connection, $_POST['cost']);
+                            $supplier = mysqli_real_escape_string($db->connection, $_POST['supplier']);
+                            $category = mysqli_real_escape_string($db->connection, $_POST['category']);
+                            $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
+                            $item = mysqli_real_escape_string($db->connection, $_POST['item']);
+                            $date = mysqli_real_escape_string($db->connection, $_POST['item']);
                            
-                            $array = explode(' ', $str);                           
-                            $autoid = ++$array[0];
-                            if($str == ''){
-                            $autoid_new = "SL".$autoid;
-                            }
-                            for ($i = 0; $i < count($stock_name); $i++) {
-                                $name1 = $stock_name[$i];
-                                $quantity = $_POST['quty'][$i];
-                                $rate = $_POST['sell'][$i];
-                                $total = $_POST['total'][$i];
+
+                            
+                           // $count = $db->countOf("stock_sales", "stock_id ='$stockid'");
+
+                            if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name) values('$stockid', '$quantity', '$name', '$date', '$item')")) 
+                                {
+                                    echo "<br><font color=green size=+1 > Venta [ $stockid] Realizada con exito !</font>";
+                                    //$db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
+                                } 
+                                /*
+                            if ($count == 1) {
+                                echo "<font color=red> Registro Duplicado. Por favor Verificar</font>";
+                            } else {
+
+                                if ($db->query("insert into stock_sales(quantity) values('$quantity')")) 
+                                {
+                                    echo "<br><font color=green size=+1 > [ $quantity] Producto Agregado !</font>";
+                                    //$db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
+                                } 
+                                else
+                                    echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";
+
+                            }*/
 
 
-                                $selected_date = $_POST['date'];
-                                $selected_date = strtotime($selected_date);
-                                $mysqldate = date('Y-m-d H:i:s', $selected_date);
-                                $username = $_SESSION['username'];
-
-                                $count = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$name1'");
-
-                                if ($count >= 1) {
-
-                                    if($str == ''){
-                                    $db->query("insert into stock_sales (tax,tax_dis,discount,dis_amount,grand_total,transactionid,stock_name,selling_price,quantity,amount,date,username,customer_id,subtotal,payment,mode,description,count1,billnumber)
-                            values('$tax','$tax_dis','$discount','$dis_amount','$payable','$autoid_new','$name1','$rate','$quantity','$total','$mysqldate','$username','$customer','$subtotal','$payment','$mode','$description',$i+1,'$bill_no')");
-                                    }
-                                     if($str != ''){
-                                    $db->query("insert into stock_sales (tax,tax_dis,discount,dis_amount,grand_total,transactionid,stock_name,selling_price,quantity,amount,date,username,customer_id,subtotal,payment,mode,description,count1,billnumber)
-                            values('$tax','$tax_dis','$discount','$dis_amount','$payable','$autoid','$name1','$rate','$quantity','$total','$mysqldate','$username','$customer','$subtotal','$payment','$mode','$description',$i+1,'$bill_no')");
-                                     }
-                                    $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$name1'");
-                                    $amount1 = $amount - $quantity;
-
-                                    //$db->query("insert into stock_entries (stock_id,stock_name,quantity,opening_stock,closing_stock,date,username,type,salesid,total,selling_price,count1,billnumber) values('$autoid','$name1','$quantity','$amount','$amount1','$mysqldate','$username','sales','$autoid','$total','$rate',$i+1,'$bill_no')");
-                                    //echo "<br><font color=green size=+1 >New Sales Added ! Transaction ID [ $autoid ]</font>" ;
-
-
-                                    $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$name1'");
-                                    $amount1 = $amount - $quantity;
-                                    $db->execute("UPDATE stock_avail SET quantity='$amount1' WHERE name='$name1'");
-
-                                } else {
-                                    echo "<br><font color=green size=+1 >There is no enough stock deliver for $name1! Please add stock !</font>";
-                                }
-
-
-                            }
-                            $msg = "<br><font color=green size=6px >Sales Added successfully Ref: [" . $_POST['stockid'] . "] !</font>";
-                            echo $msg;
-                            if($str == ''){
-                            echo "<script>window.open('add_sales_print.php?sid=$autoid_new','myNewWinsr','width=620,height=800,toolbar=0,menubar=no,status=no,resizable=yes,location=no,directories=no');</script>";
-                            }
-                            if($str != ''){
-                            echo "<script>window.open('add_sales_print.php?sid=$autoid','myNewWinsr','width=620,height=800,toolbar=0,menubar=no,status=no,resizable=yes,location=no,directories=no');</script>";
-                                
-                            }
-                            }
                         }
 
-                    
+                    }
+
 
                     ?>
 
                     <form name="form1" method="post" id="form1" action="">
-                        <input type="hidden" id="posnic_total">
 
-                        <p><strong>Agregar Ventas/Producto </strong> - Agregar Nueva ( Control +2)</p>
+
                         <table class="form" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <?php
-                                $str = $db->maxOfAll("transactionid", "stock_sales"); 
-                                $array = explode(' ', $str);                           
-                                $autoid = ++$array[0];
-                                if($str == ''){
-                                $autoid_new = "SL".$autoid;
-                                }
-                                  ?>
-                                <?php if($str == ''){?>
-                                <td>Factura no:</td>
+                                $max = $db->maxOfAll("id", "stock_sales");
+                                $max = $max + 1;
+                                $autoid = "SL" . $max . "";
+                                ?>
+                                <td><span class="man">*</span>ID&nbsp;Factura:</td>
                                 <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"
-                                           class="round default-width-input" style="width:130px "
-                                           value="<?php echo $autoid_new ?>"/></td>
-                                <?php }?>
-                                <?php if($str != ''){?>
-                                <td>Factura no:</td>
-                                <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"
-                                           class="round default-width-input" style="width:130px "
-                                           value="<?php echo $autoid ?>"/></td>
-                                <?php }?>
+                                           class="round default-width-input"
+                                           value="<?php echo isset($autoid) ? $autoid : ''; ?>"/></td>
+
                                 <td>Fecha:</td>
-                                <td><input name="date" id="test1" placeholder="" value="<?php date_default_timezone_set("Asia/Kolkata");echo date('Y-m-d H:i:s');?>"
-                                style="margin-left: 15px;"type="text" id="name" maxlength="200" class="round default-width-input"/>
+                                <td><input name="date" id="test1" readonly="readonly" value="<?php date_default_timezone_set("America/Guatemala");echo date('Y-m-d H:i:s');echo isset($date);?>"
+                                style="margin-left: 15px;"type="text" id="name" maxlength="200" class="round default-width-input" /></td>
                                 </td>
-                               
                                 
-                 
+                                
                             </tr>
                             <tr>
-                                <td>Cliente:</td>
-                                <td><input name="supplier" placeholder="ENTER CUSTOMER" type="text" id="supplier"
-                                           value="anonymous" maxlength="200" class="round default-width-input" style="width:130px "/></td>
+                                <td><span class="man">*</span>Cliente:</td>
+                                <td><input name="name" placeholder="INGRESE NOMBRE DEL CLIENTE" type="text" id="name"
+                                           maxlength="200" class="round default-width-input" style="width:150px "
+                                           value="<?php echo isset($name) ? $name : ''; ?>"/></td>
+                                
+                                <td><span class="man"></span>Direccion:</td>
+                                <td><input name="address" placeholder="INGRESE DIRECCION DEL CLIENTE" type="text" id="address"
+                                           maxlength="200" class="round default-width-input" style="width:200px;  margin-left: 20px"
+                                           value="<?php echo isset($address) ? $address : ''; ?>"/></td>
 
-                                <td>Direccion:</td>
-                                <td><input name="address" placeholder="ENTER ADDRESS" type="text" id="address"
-                                           value="coast street"maxlength="200" class="round default-width-input"/></td>
+                                <td><span class="man"></span>Contacto:</td>
+                                <td><input name="contact" placeholder="INGRESE CONTACTO DEL CLIENTE" type="text" id="contact"
+                                           maxlength="200" class="round default-width-input" style="width:120px "
+                                           value="<?php echo isset($contact) ? $contact : ''; ?>"/></td>
+                            </tr>
+                            <tr>
+                                <td><span class="man">*</span>Costo:</td>
+                                <td><input name="cost" placeholder="INGRESE COSTO" type="text" id="cost"
+                                           maxlength="200" class="round default-width-input"
+                                           onkeypress="return numbersonly(event)"
+                                           value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
 
-                                <td>Contacto:</td>
-                                <td><input name="contact" placeholder="ENTER CONTACT" type="text" id="contact1"
-                                           value="9876543210"maxlength="200" class="round default-width-input"
-                                           onkeypress="return numbersonly(event)" style="width:120px "/></td>
+                                <td><span class="man">*</span>Precio&nbsp;de Venta</td>
+                                <td><input name="sell" placeholder="INGRESE PRECIO DE VENTA" type="text" id="sell"
+                                           maxlength="200" class="round default-width-input"
+                                           onkeypress="return numbersonly(event)"
+                                           value="<?php echo isset($sell) ? $sell : ''; ?>"/></td>
 
                             </tr>
-                        </table>
-                        <input type="hidden" id="guid">
-                        <input type="hidden" id="edit_guid">
-                        <table class="form">
+                            </table>
+                            <table class="form">
                             <tr>
-                                <td>Articulo</td>
+                                <td>Producto</td>
                                 <td>Cantidad</td>
 
                                 <td>Precio</td>
-                                <td>Disponibilidad</td>
+                                <td>Disponibilidad Stock</td>
                                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</td>
                                 <td> &nbsp;</td>
                             </tr>
                             <tr>
 
-                                <td><input name="" type="text" id="item" maxlength="200"
-                                           class="round default-width-input " style="width: 150px"/></td>
+                                <td><input name="item" type="text" id="item" maxlength="200"
+                                           class="round default-width-input " style="width: 150px"
+                                           value="<?php echo isset($item)?>"/></td>
 
-                                <td><input name="" type="text" id="quty" maxlength="200"
+                                <td><input name="quantity" type="text" id="quantity" maxlength="200"
                                            class="round default-width-input my_with"
                                            onKeyPress="quantity_chnage(event);return numbersonly(event)"
-                                           onkeyup="total_amount();unique_check();stock_size();"/></td>
+                                           onkeyup="total_amount();unique_check();stock_size();"
+                                           value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
 
 
                                 <td><input name="" type="text" id="sell" readonly="readonly" maxlength="200"
@@ -311,115 +279,67 @@ include_once("init.php");
 
                             </tr>
                         </table>
+
                         <div style="overflow:auto ;max-height:300px;  ">
                             <table class="form" id="item_copy_final">
 
                             </table>
                         </div>
 
-
                         <table class="form">
                             <tr>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td><input type="checkbox" id="round" onclick="discount_type()">Cantidad Descuento</td>
-                            </tr>
-                            <tr>
-                                <td> &nbsp;</td>
-                                <td>Descuento %<input type="text" maxlength="3" class="round"
-                                                     onkeyup=" discount_amount(); "
-                                                     onkeypress="return numbersonly(event);" name="discount"
-                                                     id="discount">
-                                </td>
+                                <td>Proveedor:</td>
+                                <td><input name="supplier" placeholder="INGRESE PROVEEDOR" type="text" id="supplier"
+                                           maxlength="200" class="round default-width-input"
+                                           value="<?php echo isset($supplier) ? $supplier : ''; ?>"/></td>
 
-                                <td>Cantidad Descuento:<input type="text" readonly="readonly"
-                                                           onkeypress="return numbersonly(event);"
-                                                           onkeyup=" discount_as_amount(); " class="round"
-                                                           id="disacount_amount" name="dis_amount">
-                                </td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td>Total Descuento:<input type="hidden" readonly="readonly" id="grand_total"
-                                                       name="subtotal">
-                                    <input type="text" id="main_grand_total" readonly="readonly"
-                                           class="round default-width-input" style="text-align:right;width: 120px">
-                                </td>
-                                
+                                <td>Tipo de Producto:</td>
+                                <td><input name="category" placeholder="INGRESE TIPO DE PRODUCTO" type="text" id="category"
+                                           maxlength="200" class="round default-width-input"
+                                           value="<?php echo isset($category) ? $category : ''; ?>"/></td>
                             </tr>
+                        
+
+
                             <tr>
-                                <td> &nbsp;</td>
-                                <td> Impuesto:<input type="text" id="tax" name="tax" onkeypress="return numbersonly(event);" onkeyup="add_tax();"></td>
-                                <td>Descripcion Impuesto:<input type="text" name="tax_dis"></td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td>Cantidad a Pagar:<input type="hidden" readonly="readonly" id="grand_total">
-                                    <input type="text" id="payable_amount" readonly="readonly" name="payable"
-                                           class="round default-width-input" style="text-align:right;width: 120px">
-                                </td>
-                                
-                            </tr>
-                        </table>
-                        <table class="form">
-                            <tr>
-                                <td>Metodo pago &nbsp;</td>
                                 <td>
-                                    <select name="mode">
-                                        <option value="cash">Efectivo</option>
-                                        <option value="cheque">Cheque</option>
-                                        <option value="other">Otro</option>
-                                    </select>
-                                </td>                         
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                                <td>Descripcion</td>
-                                <td><textarea name="description"></textarea></td>
-                                <td> &nbsp;</td>
-                                <td> &nbsp;</td>
-                            </tr>
-                        </table>
-                        <table class="form">
-                            <tr>
+                                    &nbsp;
+                                </td>
+                                
                                 <td>
                                     <input class="button round blue image-right ic-add text-upper" type="submit"
-                                           name="Submit" value="Agregar">
-                                </td>
-                                <td> (Control + S)
-                                    </td>
-                                <td> &nbsp;</td>
-                                <td> <input class="button round red   text-upper" type="reset" id="Reset" name="Reset"
-                                           value="Borrar"></td>
+                                           name="Submit" value="Añadir">
+                                    
+
+                                <td align="right"><input class="button round red   text-upper" type="reset" name="Reset"
+                                                         value="Limpiar"></td>
                             </tr>
                         </table>
                     </form>
+
+
                 </div>
                 <!-- end content-module-main -->
+
+
             </div>
             <!-- end content-module -->
+
+
         </div>
+        <!-- end full-width -->
+
     </div>
-    <!-- end full-width -->
-</div>
-<!-- end content -->
+    <!-- end content -->
 
 
-<!-- FOOTER -->
-<div id="footer">
+    <!-- FOOTER -->
+    <div id="footer">
     <p>Cualquier incoveniente comunicarse a: <a href="mailto:it_panaderia@gmail.com?subject=Stock%20Management%20System">it_panaderia@gmail.com</a>.
     </p>
-</div>
-<!-- end footer -->
+
+    </div>
+    <!-- end footer -->
 
 </body>
 </html>

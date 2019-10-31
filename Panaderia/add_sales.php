@@ -105,7 +105,6 @@ include_once("init.php");
                             'stockid' => 'required|max_len,200',
                             'sell' => 'required|max_len,200',
                             'cost' => 'required|max_len,200',
-                            'date' => 'max_len,200',
                             'supplier' => 'max_len,200',
                             'category' => 'max_len,200',
                             'quantity' => 'max_len,200',
@@ -120,7 +119,6 @@ include_once("init.php");
                             'sell' => 'trim|sanitize_string|mysqli_escape',
                             'cost' => 'trim|sanitize_string|mysqli_escape',
                             'category' => 'trim|sanitize_string|mysqli_escape',
-                            'date' => 'trim|sanitize_string|mysqli_escape',
                             'supplier' => 'trim|sanitize_string|mysqli_escape',
                             'quantity' => 'trim|sanitize_string|mysqli_escape',
                             'item' => 'trim|sanitize_string|mysqli_escape'
@@ -137,8 +135,7 @@ include_once("init.php");
                         $category = "";
                         $quantity = "";
                         $item = "";
-                        $date = "";
-                    
+                        
 
 
                         if ($validated_data === false) {
@@ -154,7 +151,6 @@ include_once("init.php");
                             $category = mysqli_real_escape_string($db->connection, $_POST['category']);
                             $quantity = mysqli_real_escape_string($db->connection, $_POST['quantity']);
                             $item = mysqli_real_escape_string($db->connection, $_POST['item']);
-                            $date = mysqli_real_escape_string($db->connection, $_POST['item']);
                            
 
                             
@@ -162,7 +158,8 @@ include_once("init.php");
 
                             if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name) values('$stockid', '$quantity', '$name', '$date', '$item')")) 
                                 {
-                                    echo "<br><font color=green size=+1 > Venta [ $stockid] Realizada con exito !</font>";
+                                    $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
+                                    echo "<br><font color=green size=+1 > Venta [ $amount] Realizada con exito !</font>";
                                     //$db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
                                 } 
                                 /*
@@ -204,15 +201,15 @@ include_once("init.php");
                                            value="<?php echo isset($autoid) ? $autoid : ''; ?>"/></td>
 
                                 <td>Fecha:</td>
-                                <td><input name="date" id="test1" readonly="readonly" value="<?php date_default_timezone_set("America/Guatemala");echo date('Y-m-d H:i:s');echo isset($date);?>"
-                                style="margin-left: 15px;"type="text" id="name" maxlength="200" class="round default-width-input" /></td>
+                                <td><input name="date" id="test1" readonly="readonly" value="<?php date_default_timezone_set("America/Guatemala");echo date('Y-m-d H:i:s');?>"
+                                style="margin-left: 15px;"type="text" id="date" maxlength="200" class="round default-width-input"/>
                                 </td>
                                 
                                 
                             </tr>
                             <tr>
                                 <td><span class="man">*</span>Cliente:</td>
-                                <td><input name="name" placeholder="INGRESE NOMBRE DEL CLIENTE" type="text" id="name"
+                                <td><input name="name" placeholder="INGRESE NOMBRE DEL CLIENTE" type="text" id="supplier"
                                            maxlength="200" class="round default-width-input" style="width:150px "
                                            value="<?php echo isset($name) ? $name : ''; ?>"/></td>
                                 
@@ -252,10 +249,10 @@ include_once("init.php");
                                 <td> &nbsp;</td>
                             </tr>
                             <tr>
-
-                                <td><input name="item" type="text" id="item" maxlength="200"
+                            <td><input name="item" type="text" id="item" maxlength="200"
                                            class="round default-width-input " style="width: 150px"
-                                           value="<?php echo isset($item)?>"/></td>
+                                           value="<?php echo isset($item) ? $item : ''; ?>"/> 
+                                           </td>
 
                                 <td><input name="quantity" type="text" id="quantity" maxlength="200"
                                            class="round default-width-input my_with"
@@ -264,8 +261,9 @@ include_once("init.php");
                                            value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
 
 
-                                <td><input name="" type="text" id="sell" readonly="readonly" maxlength="200"
-                                           class="round default-width-input my_with"/></td>
+                                <td><input name="" type="text" id="sell"  maxlength="200"
+                                           class="round default-width-input my_with"
+                                           /></td>
 
 
                                 <td><input name="" type="text" id="stock" readonly="readonly" maxlength="200"
@@ -299,6 +297,23 @@ include_once("init.php");
                                            value="<?php echo isset($category) ? $category : ''; ?>"/></td>
                             </tr>
                         
+                        
+                            <tr>
+                                <td>Metodo pago &nbsp;</td>
+                                <td>
+                                    <select name="mode">
+                                        <option value="cash">Efectivo</option>
+                                        <option value="cheque">Cheque</option>
+                                        <option value="other">Otro</option>
+                                    </select>
+                                </td>                         
+                         
+                                <td>Descripcion</td>
+                                <td><textarea name="description"></textarea></td>
+                                <td> &nbsp;</td>
+                                <td> &nbsp;</td>
+                            </tr>
+                    
 
 
                             <tr>

@@ -21,7 +21,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
             "http://www.w3.org/TR/html4/loose.dtd">
         <html>
         <head>
-            <title>Sale Report</title>
+            <title>Reporte de Compras</title>
             <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         </head>
         <style type="text/css" media="print">
@@ -55,7 +55,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                     <table width="595" border="0" cellspacing="0" cellpadding="0">
 
                         <tr>
-                            <td height="30" align="center"><strong>Purchase Report</strong></td>
+                            <td height="30" align="center"><strong>Reporte de Compras</strong></td>
                         </tr>
                         <tr>
                             <td height="30" align="center">&nbsp;</td>
@@ -64,17 +64,17 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                             <td align="right">
                                 <table width="300" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="150"><strong>Total Purchase</strong></td>
+                                        <td width="150"><strong>Total Compra</strong></td>
                                         <td width="150">
                                             &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(subtotal) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Paid Amount</strong></td>
+                                        <td><strong>Cantidad Pagada</strong></td>
                                         <td>
                                             &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(payment) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
                                     <tr>
-                                        <td width="150"><strong>Pending Payment </strong></td>
+                                        <td width="150"><strong>Pago Pendiente </strong></td>
                                         <td width="150">
                                             &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(balance) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
@@ -90,9 +90,9 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                             <td height="20">
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td width="45"><strong>From</strong></td>
+                                        <td width="45"><strong>Desde</strong></td>
                                         <td width="393">&nbsp;<?php echo $_GET['from_purchase_date']; ?></td>
-                                        <td width="41"><strong>To</strong></td>
+                                        <td width="41"><strong>Hasta</strong></td>
                                         <td width="116">&nbsp;<?php echo $_GET['to_purchase_date']; ?></td>
                                     </tr>
                                 </table>
@@ -107,10 +107,10 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                             <td>
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td><strong>Date</strong></td>
-                                        <td><strong>Purchase ID </strong></td>
-                                        <td><strong>Supplier</strong></td>
-                                        <td><strong>Paid</strong></td>
+                                        <td><strong>Fecha</strong></td>
+                                        <td><strong>Código Compra</strong></td>
+                                        <td><strong>Proveedor</strong></td>
+                                        <td><strong>Pago</strong></td>
                                         <td><strong>Balance</strong></td>
                                         <td><strong>Total</strong></td>
                                     </tr>
@@ -159,6 +159,6 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
         </html>
         <?php
     } else
-        echo "Please from and to date to process report";
+        echo "Ingrese fecha de inicio y final para realizar el reporte";
 }
 ?>

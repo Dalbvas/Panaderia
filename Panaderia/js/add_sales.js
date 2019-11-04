@@ -1,26 +1,22 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
         /*$.validator.setDefaults({
          submitHandler: function() { alert("submitted!"); }
          });*/
          $(document).ready(function () {
-
-            $("#item").blur(function () {
+            
+            $("#item").blur(function () 
+            {
                 document.getElementById('total').value = document.getElementById('cost').value * document.getElementById('quty').value
-            });
-            $("#item").blur(function () {
+            
+            $("#item").blur(function () 
+            {
 
 
                 $.post('check_item_details.php', {stock_name1: $(this).val()},
                     function (data) {
-                        $("#cost").val(data.cost);
+                        //$("#cost").val(data.cost);
                         $("#sell").val(data.sell);
                         $("#stock").val(data.stock);
-                        $('#guid').val(data.guid);
+                        //$('#guid').val(data.guid);
                         if (data.cost != undefined)
                             $("#0").focus();
 
@@ -29,7 +25,7 @@
 
 
             });
-            $("#quty").blur(function () {
+           $("#quty").blur(function () {
                 if (document.getElementById('item').value == "") {
                     document.getElementById('item').focus();
                 }
@@ -106,9 +102,12 @@
             });
 
         });
-        function numbersonly(e) {
+
+        function numbersonly(e) 
+        {
             var unicode = e.charCode ? e.charCode : e.keyCode
-            if (unicode != 8 && unicode != 46 && unicode != 37 && unicode != 38 && unicode != 39 && unicode != 40 && unicode != 9) { //if the key isn't the backspace key (which we should allow)
+            if (unicode != 8 && unicode != 46 && unicode != 37 && unicode != 38 && unicode != 39 && unicode != 40 && unicode != 9) 
+            { 
                 if (unicode < 48 || unicode > 57)
                     return false
             }

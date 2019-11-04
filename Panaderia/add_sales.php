@@ -110,8 +110,9 @@ include_once("init.php");
                             'quantity' => 'max_len,200',
                             'date' => 'max_len,200',
                             'seller' => 'max_len,200',
-                            
+                            'quty' => 'max_len,200',
                             'item' => 'max_len,200'
+                            
                              
 
                         ));
@@ -126,7 +127,7 @@ include_once("init.php");
                             'quantity' => 'trim|sanitize_string|mysqli_escape',
                             'date' => 'trim|sanitize_string|mysqli_escape',
                             'seller' => 'trim|sanitize_string|mysqli_escape',
-                            
+                            'quty' => 'trim|sanitize_string|mysqli_escape',
                             'item' => 'trim|sanitize_string|mysqli_escape'
                             
 
@@ -142,7 +143,7 @@ include_once("init.php");
                         $quantity = "";
                         $item = "";
                         $date = "";
-                        
+                        $quty = "";
                         $seller = "";
                         
 
@@ -162,6 +163,7 @@ include_once("init.php");
                             $date = mysqli_real_escape_string($db->connection, $_POST['date']);
                             $item = mysqli_real_escape_string($db->connection, $_POST['item']);
                             $seller = mysqli_real_escape_string($db->connection, $_POST['seller']);
+                            $quty = mysqli_real_escape_string($db->connection, $_POST['seller']);
 
                            
 
@@ -244,11 +246,8 @@ include_once("init.php");
                                            
                                            value="<?php echo isset($seller) ? $seller : ''; ?>"/></td>
 
-                                <td><span class="man">*</span>Precio&nbsp;de Venta</td>
-                                <td><input name="cost" placeholder="INGRESE PRECIO DE VENTA" type="text" id="cost"
-                                           maxlength="200" class="round default-width-input"
-                                           onkeypress="return numbersonly(event)"
-                                           value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
+                                <td></td>
+                                <td></td>
 
                             </tr>
                             </table>
@@ -275,9 +274,9 @@ include_once("init.php");
                                            value="<?php echo isset($quantity) ? $quantity : ''; ?>"/></td>
 
 
-                                <td><input name="cost" type="text" id="cost"  maxlength="200"
+                                <td><input name="sell" type="text" id="sell"  maxlength="200"
                                            class="round default-width-input my_with"
-                                           value="<?php echo isset($cost) ? $cost : ''; ?>"/></td>
+                                           value="<?php echo isset($sell) ? $sell : ''; ?>"/></td>
 
 
                                 <td><input name="stock" type="text" id="stock" readonly="readonly" maxlength="200"
@@ -293,6 +292,19 @@ include_once("init.php");
                             </tr>
                         </table>
 
+
+                        <table class="form">
+                                  
+                                    <tr>
+                                        <td><input name="" type="text" id="quty" maxlength="200"
+                                                   class="round default-width-input my_with"
+                                                   onKeyPress="quantity_chnage(event);return numbersonly(event);"
+                                                   onkeyup="total_amount();unique_check()" style="visibility:hidden"/></td>
+
+                                        <td><input name="" type="text" id="cost" readonly="readonly" maxlength="200"
+                                                   class="round default-width-input my_with" style="visibility:hidden"/></td>
+                                    </tr>
+                                </table>
                         <div style="overflow:auto ;max-height:300px;  ">
                             <table class="form" id="item_copy_final">
 

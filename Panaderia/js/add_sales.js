@@ -2,7 +2,7 @@
          submitHandler: function() { alert("submitted!"); }
          });*/
          $(document).ready(function () {
-            
+             
             $("#item").blur(function () 
             {
                 document.getElementById('total').value = document.getElementById('cost').value * document.getElementById('quty').value
@@ -112,4 +112,4 @@
                     return false
             }
         }
-
+    });

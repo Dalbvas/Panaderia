@@ -113,6 +113,7 @@ include_once("init.php");
                             'total' => 'max_len,200',
                             'kardex' => 'max_len,200',
                             'nit' => 'max_len,200',
+                            'description' => 'max_len,200',
                             'item' => 'max_len,200'
                             
                              
@@ -131,6 +132,7 @@ include_once("init.php");
                             'quty' => 'trim|sanitize_string|mysqli_escape',
                             'kardex' => 'trim|sanitize_string|mysqli_escape',
                             'nit' => 'trim|sanitize_string|mysqli_escape',
+                            'description' => 'trim|sanitize_string|mysqli_escape',
                             'item' => 'trim|sanitize_string|mysqli_escape'
                             
 
@@ -149,6 +151,7 @@ include_once("init.php");
                         $quty = "";
                         $kardex = "";
                         $nit = "";
+                        $description = "";
                         $seller = "";
                         
 
@@ -170,6 +173,7 @@ include_once("init.php");
                             $seller = mysqli_real_escape_string($db->connection, $_POST['seller']);
                             $kardex = mysqli_real_escape_string($db->connection, $_POST['kardex']);
                             $nit = mysqli_real_escape_string($db->connection, $_POST['nit']);
+                            $description = mysqli_real_escape_string($db->connection, $_POST['description']);
                             $quty = mysqli_real_escape_string($db->connection, $_POST['seller']);
 
                            
@@ -177,7 +181,7 @@ include_once("init.php");
                             
                            // $count = $db->countOf("stock_sales", "stock_id ='$stockid'");
                            
-                            if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name, seller, total, category, nit) values('$stockid', '$quantity', '$name', '$date', '$item','$seller', '$total', '$category', '$nit')")) 
+                            if ($db->query("insert into stock_sales(transactionid, quantity, customer_id, date, stock_name, seller, total, category, nit, description) values('$stockid', '$quantity', '$name', '$date', '$item','$seller', '$total', '$category', '$nit', '$description')")) 
                                 {
                                     $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
                                     echo "<br><font color=green size=+1 > Venta [ $stockid] Realizada con exito !</font>";
@@ -355,7 +359,8 @@ include_once("init.php");
                                 </td>                         
                          
                                 <td>Descripcion</td>
-                                <td><textarea name="description"></textarea></td>
+                                <td><textarea name="description" type="text" id="description"
+                                value="<?php echo isset($description) ? $description : ''; ?>"></textarea></td>
                                 <td> &nbsp;</td>
                                 <td> &nbsp;</td>
                             </tr>

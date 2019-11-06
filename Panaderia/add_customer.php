@@ -134,9 +134,9 @@ include_once("init.php");
                             } else {
 
                                 if ($db->query("insert into customer_details values(NULL,'$name','$address','$contact1','$contact2',0)"))
-                                    echo "<div class='confirmation-box round'>[ $name ] Customer Details Added !</div>";
+                                    echo "<div class='confirmation-box round'>[ $name ] Agregado exitosamente !</div>";
                                 else
-                                    echo "<div class='error-box round'>Problem in Adding !</div>";
+                                    echo "<div class='error-box round'>No se pudo agregar !</div>";
 
                             }
                         }

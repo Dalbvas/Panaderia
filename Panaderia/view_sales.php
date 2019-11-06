@@ -381,7 +381,7 @@ include_once("init.php");
                                     <th>Fecha</th>
                                     <th>Cliente</th>
 
-                                    <th>Pago</th>
+                                    <th>Vendedor</th>
                                     <th>Costo</th>
                                     <th>Editar /Eliminar</th>
                                     <th>Seleccionar</th>
@@ -404,8 +404,8 @@ $count=0;
                                         <td> <?php echo $row['transactionid']; ?></td>
                                         <td> <?php echo $row['date']; ?></td>
                                         <td> <?php echo $row['customer_id']; ?></td>
-                                        <td> <?php echo $row['payment']; ?></td>
-                                        <td> <?php echo $row['subtotal']; ?></td>
+                                        <td> <?php echo $row['seller']; ?></td>
+                                        <td> <?php echo $row['total']; ?></td>
 
 
                                         <td>

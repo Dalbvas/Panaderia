@@ -25,7 +25,7 @@
                     },
                     password: {
                         required: "Ingrese Contraseña",
-                        minlength: "Your password must be at least 3 characters long"
+                        minlength: "La Contraseña debe tener un minimo de 3 caracteres"
                     }
                 }
             });

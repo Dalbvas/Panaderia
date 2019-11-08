@@ -33,11 +33,11 @@
                 },
                 messages: {
                     name: {
-                        required: "Please enter a supplier name",
+                        required: "Ingrese nombre de proveedor",
                         minlength: "El nombre debe ser de por lo menos 3 caracteres"
                     },
                     contact1: {
-                        required: "Please enter a contact number",
+                        required: "Ingrese numero de contacto",
                         minlength: "El contacto debe tener minimo 10 digitos",
                         maxlength: "El contacto no debe pasar de 13 digitos"
                     },

@@ -20,11 +20,11 @@
                 },
                 messages: {
                     username: {
-                        required: "Please enter a username",
-                        minlength: "Your username must consist of at least 3 characters"
+                        required: "Ingrese Usuario",
+                        minlength: "Debe constar de minimo 3 caracteres"
                     },
                     password: {
-                        required: "Please provide a password",
+                        required: "Ingrese Contraseña",
                         minlength: "Your password must be at least 3 characters long"
                     }
                 }

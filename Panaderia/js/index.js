@@ -21,7 +21,7 @@
                 messages: {
                     username: {
                         required: "Ingrese Usuario",
-                        minlength: "Debe constar de minimo 3 caracteres"
+                        minlength: "El Usuario debe tener un minimo de 3 caracteres"
                     },
                     password: {
                         required: "Ingrese Contraseña",

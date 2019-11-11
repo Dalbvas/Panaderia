@@ -147,7 +147,7 @@
             
 
             document.getElementById('total').value = document.getElementById('sell').value * document.getElementById('quantity').value;
-            //document.getElementById('kardex').value = document.getElementById('total').value;
+            
             //Prueba de resta en stock
             document.getElementById('kardex').value = document.getElementById('stock').value - document.getElementById('quantity').value;
             //document.getElementById('kardex').value = document.getElementById('sell').value + document.getElementById('quantity').value;

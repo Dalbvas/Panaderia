@@ -4,6 +4,7 @@ include_once("init.php");
 $line = $db->queryUniqueObject("SELECT * FROM stock_details  WHERE stock_name ='" . $_POST['stock_name1'] . "'");
 $cost = $line->company_price;
 $sell = $line->selling_price;
+$supplier = $line->supplier_id;
 $category =$line->category;
 $stock_id = $line->stock_id;
 $line = $db->queryUniqueObject("SELECT * FROM stock_avail  WHERE name ='" . $_POST['stock_name1'] . "'");
@@ -11,7 +12,7 @@ $stock = $line->quantity;
 
 if ($line != NULL) {
 
-    $arr = array("cost" => "$cost", "sell" => "$sell", "stock" => "$stock", "guid" => $stock_id, "category" => "$category");
+    $arr = array("cost" => "$cost", "sell" => "$sell", "stock" => "$stock", "guid" => $stock_id, "category" => "$category", "supplier" => "$supplier");
     echo json_encode($arr);
 
 } else {

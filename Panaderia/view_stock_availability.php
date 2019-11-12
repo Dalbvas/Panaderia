@@ -116,7 +116,7 @@ include_once("init.php");
                                                               echo "10";
                                                           ?>"
                                                           size="3" maxlength="3">
-                                    <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                                    <input name="go" type="button" value="Ir" class=" round blue my_button  text-upper"
                                            onclick="return confirmLimitSubmit()">
                                 </form>
 

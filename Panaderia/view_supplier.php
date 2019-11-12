@@ -126,7 +126,7 @@ include_once("init.php");
                                     <input type="button" name="unselectall" value="DeSelectAll"
                                            class="my_button round blue   text-upper" onClick="uncheckAll()"
                                            style="margin-left:5px;"/>-->
-                                    <input name="dsubmit" type="button" value="Delete Selected"
+                                    <input name="dsubmit" type="button" value="Eliminar Seleccionado"
                                            class="my_button round blue   text-upper" style="margin-left:5px;"
                                            onclick="return confirmDeleteSubmit()"/>
 <!--<input type="button" name="Deleteall" value="Delect All Records"
@@ -323,7 +323,7 @@ include_once("init.php");
                                             <th>No</th>
                                             <th>Nombre proveedor</th>
                                             <th>Contacto</th>
-                                            <th>Balance</th>
+                                            
                                             <th>Editar/Borrar</th>
                                             <th>Seleccionar</th>
                                         </tr>
@@ -351,7 +351,7 @@ include_once("init.php");
 
                                                 <td><?php echo $row['supplier_name']; ?></td>
                                                 <td> <?php echo $row['supplier_contact1']; ?></td>
-                                                <td> <?php echo $row['balance']; ?></td>
+                                                
                                                 <td>
                                                     <a href="update_supplier.php?sid=<?php echo $row['id']; ?>&table=supplier_details&return=view_supplier.php"
                                                        class="table-actions-button ic-table-edit">

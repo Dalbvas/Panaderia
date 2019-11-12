@@ -166,14 +166,14 @@ include_once("init.php");
                             $item = mysqli_real_escape_string($db->connection, $_POST['item']);
                             $kardex = mysqli_real_escape_string($db->connection, $_POST['kardex']);
                             $description = mysqli_real_escape_string($db->connection, $_POST['description']);
-                            $quty = mysqli_real_escape_string($db->connection, $_POST['seller']);
+                           // $quty = mysqli_real_escape_string($db->connection, $_POST['seller']);
 
                            
 
                             
                            // $count = $db->countOf("stock_sales", "stock_id ='$stockid'");
                            
-                            if ($db->query("insert into stock_entries(stock_id, quantity) values('$stockid', '$quantity')")) 
+                            if ($db->query("insert into stock_entries(stock_id, quantity, stock_name, category, company_price, selling_price, date, stock_supplier_name, description,total) values('$stockid', '$quantity','$item', '$category','$cost','$sell','$date','$name','$description','$total')")) 
                                 {
                                     $amount = $db->queryUniqueValue("SELECT quantity FROM stock_avail WHERE name='$item'");
                                     echo "<br><font color=green size=+1 > Compra [ $stockid] Realizada con exito !</font>";
@@ -308,7 +308,7 @@ include_once("init.php");
                                                    <td><input name="kardex" type="text" id="kardex" readonly="readonly"
                                                     maxlength="200"
                                                    class="round default-width-input my_with"
-                                                   
+                                                   style="visibility:hidden"
                                                    value="<?php echo isset($kardex) ? $kardex : ''; ?>" /></td>
                                     </tr>
                                 </table>

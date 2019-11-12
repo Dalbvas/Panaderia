@@ -66,18 +66,14 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                                     <tr>
                                         <td width="150"><strong>Total Compra</strong></td>
                                         <td width="150">
-                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(subtotal) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
+                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(total) FROM stock_entries where  date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Cantidad Pagada</strong></td>
                                         <td>
-                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(payment) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
+                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(payment) FROM stock_entries where date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
-                                    <tr>
-                                        <td width="150"><strong>Pago Pendiente </strong></td>
-                                        <td width="150">
-                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(balance) FROM stock_entries where count1=1 AND type='entry' AND date BETWEEN '$fromdate' AND '$todate' "); ?></td>
-                                    </tr>
+                                   
                                 </table>
                             </td>
                         </tr>
@@ -110,8 +106,6 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                                         <td><strong>Fecha</strong></td>
                                         <td><strong>Código Compra</strong></td>
                                         <td><strong>Proveedor</strong></td>
-                                        <td><strong>Pago</strong></td>
-                                        <td><strong>Balance</strong></td>
                                         <td><strong>Total</strong></td>
                                     </tr>
                                     <tr>
@@ -123,7 +117,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                                         <td>&nbsp;</td>
                                     </tr>
                                     <?php
-                                    $result = $db->query("SELECT * FROM stock_entries where  type='entry' AND date BETWEEN '$fromdate' AND '$todate' ");
+                                    $result = $db->query("SELECT * FROM stock_entries where  date BETWEEN '$fromdate' AND '$todate' ");
                                     while ($line = $db->fetchNextObject($result)) {
                                         ?>
 
@@ -134,9 +128,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                                                 echo $phpdate; ?></td>
                                             <td><?php echo $line->stock_id; ?></td>
                                             <td><?php echo $line->stock_supplier_name; ?></td>
-                                            <td><?php echo $line->payment;?></td>
-                                            <td><?php echo $line->balance; ?></td>
-                                            <td><?php echo $line->subtotal; ?></td>
+                                            <td><?php echo $line->total; ?></td>
                                         </tr>
                                         <?php
                                     }

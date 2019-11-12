@@ -381,9 +381,9 @@ include_once("init.php");
                                                 <tr>
                                                     <td align='right'style="width:20%"><?php $end = $no + $co1; ?>
                                                         <?php if($end != ''){?>
-                                                        Showing <?php echo $no + 1; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                        Mostrando <?php echo $no + 1; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                                         <?php }else{?>
-                                                    Showing <?php echo $no; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                    Mostrando <?php echo $no; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                                         <?php }?>
                                                 </tr>
 

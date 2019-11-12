@@ -149,8 +149,13 @@
 
             document.getElementById('total').value = document.getElementById('cost').value * document.getElementById('quantity').value;
             //document.getElementById('kardex').value = document.getElementById('total').value;
+            var number1=parseInt(document.getElementById('stock').value);
+            var number2=parseInt(document.getElementById('quantity').value);
+            var result;
+            result=number1+number2;
+            document.getElementById('kardex').value = result;
             //Prueba de suma en stock
-            document.getElementById('kardex').value = document.getElementById('stock').value + document.getElementById('quantity').value;
+            //document.getElementById('kardex').value = document.getElementById('stock').value + document.getElementById('quantity').value;
             //document.getElementById('kardex').value = document.getElementById('sell').value + document.getElementById('quantity').value;
             document.getElementById('kardex').value = parseFloat(document.getElementById('kardex').value);
             document.getElementById('total').value = parseFloat(document.getElementById('total').value);

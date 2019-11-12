@@ -6,7 +6,7 @@ include_once("init.php");
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>POSNIC - Stock</title>
+        <title>Señor Pan</title>
 
         <!-- Stylesheets -->
         <!---->
@@ -101,13 +101,13 @@ include_once("init.php");
 
                             <table>
                                 <form action="" method="post" name="search">
-                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search"
+                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Producto"
                                            style="margin-left: 200px">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                                       value="Search">
+                                                       value="Buscar">
                                 </form>
                                 <form action="" method="get" name="limit_go">
-                                    Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                                    Entradas por Pagina<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                           style="margin-left:5px;"
                                                           value="<?php
                                                           if (isset($_GET['limit']))
@@ -308,9 +308,9 @@ include_once("init.php");
                                         <tr>
                                             <td>&nbsp;</td>
                                             <th>No</th>
-                                            <th>Stock Name</th>
+                                            <th>Producto</th>
 
-                                            <th>Stock</th>
+                                            <th>Cantidad Disponible</th>
                                             <td>&nbsp;</td>
                                             <td>&nbsp;</td>
                                         </tr>
@@ -354,7 +354,7 @@ include_once("init.php");
                                         <table>
                                             <tr>
                                                 <td align='right'style="width:20%"><?php $end = $no + $co1; ?>
-                                                    Showing <?php echo $no + 1; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                    Mostrando <?php echo $no + 1; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                             </tr>
 
 

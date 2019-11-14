@@ -101,17 +101,17 @@ include_once("init.php");
 
                             <table>
                                 <form action="" method="post" name="search">
-                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Search">
+                                    <input name="searchtxt" type="text" class="round my_text_box" placeholder="Buscar">
                                     &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper"
-                                                       value="Search">
+                                                       value="Buscar">
                                 </form>
                                 <form action="" method="get" name="limit_go">
-                                    Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                                    Pagina por Registro<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                           style="margin-left:5px;"
                                                           value="<?php if (isset($_GET['limit'])) echo $_GET['limit'];
                                                                         else echo "10"; ?>"
                                                           size="3" maxlength="3">
-                                    <input name="go" type="button" value="Go" class=" round blue my_button  text-upper"
+                                    <input name="go" type="button" value="Ir" class=" round blue my_button  text-upper"
                                            onclick="return confirmLimitSubmit()">
                                 </form>
 
@@ -119,13 +119,13 @@ include_once("init.php");
 
                                     <input type="hidden" name="table" value="category_details">
                                     <input type="hidden" name="return" value="view_category.php">
-                                    <input type="button" name="selectall" value="SelectAll"
+                                    <input type="button" name="selectall" value="Seleccionar Todo"
                                            class="my_button round blue   text-upper" onClick="checkAll()"
                                            style="margin-left:5px;"/>
-                                    <input type="button" name="unselectall" value="DeSelectAll"
+                                    <input type="button" name="unselectall" value="Quitar Seleccionado"
                                            class="my_button round blue   text-upper" onClick="uncheckAll()"
                                            style="margin-left:5px;"/>
-                                    <input name="dsubmit" type="button" value="Delete Selected"
+                                    <input name="dsubmit" type="button" value="Eliminar Seleccionado"
                                            class="my_button round blue   text-upper" style="margin-left:5px;"
                                            onclick="return confirmDeleteSubmit()"/>
 
@@ -317,11 +317,11 @@ include_once("init.php");
                                         ?>
                                         <tr>
                                             <th>No</th>
-                                            <th>Category Name</th>
-                                            <th>description</th>
+                                            <th>Nombre Categoria</th>
+                                            <th>Descripcion</th>
 
-                                            <th>Edit /Delete</th>
-                                            <th>Select</th>
+                                            <th>Editar /Borrar</th>
+                                            <th>Seleccionar</th>
                                         </tr>
 
                                         <?php
@@ -366,7 +366,7 @@ include_once("init.php");
                                         <table>
                                             <tr>
                                                 <td align='right'style="width:20%"><?php $end = $no + $co1; ?>
-                                                    Showing <?php echo $no + 1; ?> to <?php echo $end; ?> of <?php echo $co; ?> entries</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
+                                                    Mostrar <?php echo $no + 1; ?> a <?php echo $end; ?> de <?php echo $co; ?> entradas</td><td >&nbsp;</td><td><?php echo $pagination; ?></td>
                                             </tr>
 
 

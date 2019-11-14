@@ -26,11 +26,11 @@
                 messages: {
                     name: {
                         required: "Ingrese Categoria",
-                        minlength: "Category Name must consist of at least 3 characters"
+                        minlength: "Categoria debe contener minimo 3 caracteres"
                     },
                     address: {
-                        minlength: "Category Discription must be at least 3 characters long",
-                        maxlength: "Category Discription must be at least 3 characters long"
+                        minlength: "Description debe contener minimo 3 caracteres",
+                        maxlength: "Description debe contener minimo 3 caracteres"
                     }
                 }
             });

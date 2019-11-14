@@ -28,13 +28,13 @@
                 },
                 messages: {
                     name: {
-                        required: "Please enter supplier name",
+                        required: "Ingrese Proveedor",
                         minlength: "Customer must consist of at least 3 characters",
                         maxlength: "Customer name is too long !"
                     },
                     contact1: {
-                        required: "Please enter a contact number",
-                        minlength: "Contact No must consist of at least 10 characters"
+                        required: "Ingrese numero de contacto",
+                        minlength: "Contact No must consist of at least 10 characters",
                         maxlength: "Contact No should not be more than 13 digits"
                     },
                     address: {

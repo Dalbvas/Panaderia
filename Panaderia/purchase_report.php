@@ -37,7 +37,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
             }
         </script>
         <body>
-        <input name="print" type="button" value="Print" id="printButton" onClick="printpage()">
+        <input name="print" type="button" value="Imprimir" id="printButton" onClick="printpage()">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td align="center">
@@ -71,7 +71,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'admin') { // if s
                                     <tr>
                                         <td><strong>Cantidad Pagada</strong></td>
                                         <td>
-                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(payment) FROM stock_entries where date BETWEEN '$fromdate' AND '$todate' "); ?></td>
+                                            &nbsp;<?php echo $age = $db->queryUniqueValue("SELECT sum(total) FROM stock_entries where date BETWEEN '$fromdate' AND '$todate' "); ?></td>
                                     </tr>
                                    
                                 </table>

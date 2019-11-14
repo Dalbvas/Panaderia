@@ -20,11 +20,11 @@
                 },
                 messages: {
                     host: {
-                        required: "Please Enter The Host",
+                        required: "Ingrese Host",
                         minlength: "Your Host must consist of at least 3 characters"
                     },
                     username: {
-                        required: "Please Enter The User Name",
+                        required: "Ingrese Usuario",
                         minlength: "Your User Name must be at least 3 characters long"
                     }
                 }

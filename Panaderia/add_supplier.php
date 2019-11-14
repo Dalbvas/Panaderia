@@ -138,7 +138,7 @@ include_once("init.php");
                             } else {
 
                                 if ($db->query("insert into supplier_details values(NULL,'$name','$address','$contact1','$contact2',0)"))
-                                    echo "<br><font color=green size=+1 > [ $name ] Supplier Details Added !</font>";
+                                    echo "<br><font color=green size=+1 > Proveedor [ $name ] Agregado Correctamente !</font>";
                                 else
                                     echo "<br><font color=red size=+1 >Problem in Adding !</font>";
 

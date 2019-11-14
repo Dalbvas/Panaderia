@@ -8,7 +8,7 @@
    
         // Nannette Thacker http://www.shiningstar.net
         function confirmSubmit() {
-            var agree = confirm("Are you sure you wish to Delete this Entry?");
+            var agree = confirm("Desea eliminar la entrada?");
             if (agree)
                 return true;
             else

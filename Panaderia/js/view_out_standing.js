@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
    
         // Nannette Thacker http://www.shiningstar.net
         function confirmSubmit() {
@@ -60,8 +61,7 @@
             for (i = 0; i < field.length; i++)
                 field[i].checked = false;
         }
-     
-
+   
 
         /*$.validator.setDefaults({
          submitHandler: function() { alert("submitted!"); }
@@ -103,3 +103,4 @@
 
         });
 
+   

@@ -122,11 +122,11 @@ include_once("init.php");
                             <form name="form1" method="post" id="form1" action="">
                                 <input name="id" type="hidden" value="<?php echo $_GET['sid']; ?>">
                                 <tr>
-                                    <td>Name</td>
+                                    <td>Nombre</td>
                                     <td><input name="name" type="text" id="name" maxlength="200"
                                                class="round default-width-input" onkeypress="return lettersOnly(event)"
                                                value="<?php echo $line->customer_name; ?> "/></td>
-                                    <td><b><span class="man">*</span></b><b>Contact</b><b>-1</b></td>
+                                    <td><b><span class="man">*</span></b><b>Contacto</b><b>-1</b></td>
                                     <td><input name="contact1" type="text" id="buyingrate" maxlength="20"
                                                class="round default-width-input" onkeypress="return numbersonly(event)"
                                                value="<?php echo $line->customer_contact1; ?>"/></td>
@@ -136,12 +136,12 @@ include_once("init.php");
                                     <td>&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><b>Address:</b></td>
+                                    <td><b>Dirección:</b></td>
                                     <td><textarea name="address" cols="15"
                                                   class="round full-width-textarea"><?php echo $line->customer_address; ?>
 					  </textarea></td>
 
-                                    <td><b>Contact</b><b>-2</b></td>
+                                    <td><b>Contacto</b><b>-2</b></td>
                                     <td><input name="contact2" type="text" id="sellingrate" maxlength="20"
                                                class="round default-width-input" onkeypress="return numbersonly(event)"
                                                value="<?php echo $line->customer_contact2; ?>"/></td>
@@ -154,11 +154,11 @@ include_once("init.php");
                                     </td>
                                     <td>
                                         <input class="button round blue image-right ic-add text-upper" type="submit"
-                                               name="Submit" value="Save">
+                                               name="Submit" value="Añadir">
                                         (Control + S)
                                     </td>
                                     <td align="right"><input class="button round red   text-upper" type="reset"
-                                                             name="Reset" value="Reset"></td>
+                                                             name="Reset" value="Limpiar"></td>
                                 </tr>
                         </table>
                     </form>

@@ -74,7 +74,7 @@ include_once("init.php");
             <h3>Realizar compra</h3>
             <ul>
                 <li><a href="add_purchase.php">Agregar Compra</a></li>
-                <li><a href="view_purchase.php">Ver compra  </a></li>
+                <li><a href="view_purchase.php">Visualizar Compra  </a></li>
 
             </ul>
         </div>
@@ -356,7 +356,7 @@ include_once("init.php");
                                 <tr>
                                     <th>No</th>
                                     <th>Compra Id</th>
-                                    <th>Nombre de compra</th>
+                                    <th>Nombre Producto</th>
                                     <th>Fecha</th>
                                     <th>Proveedor</th>
                                     <th>Cantidad</th>

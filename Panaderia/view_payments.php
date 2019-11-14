@@ -153,7 +153,7 @@ include_once("init.php");
 
                                 if ($db->query("insert into transactions (name, supplier,quantity,subtotal) values('$name','$supplier','$quantity','$cost')")) {
                                     echo "<br><font color=green size=+1 > [ $name ] Producto Agregado !</font>";
-                                    $db->query("insert into stock_avail(name,quantity) values('$name','$quantity')");
+                                   
                                 } else
                                     echo "<br><font color=red size=+1 >El producto no se pudo agregar !</font>";
 

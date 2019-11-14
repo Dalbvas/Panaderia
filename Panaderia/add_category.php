@@ -133,7 +133,7 @@ include_once("init.php");
                             } else {
 
                                 if ($db->query("insert into category_details values(NULL,'$name','$address')"))
-                                    echo "<br><font color=green size=+1 > [ $name ] Category Details Added !</font>";
+                                    echo "<br><font color=green size=+1 > Categoria [ $name ]  Agregada Correctamente !</font>";
                                 else
                                     echo "<br><font color=red size=+1 >Problem in Adding !</font>";
 

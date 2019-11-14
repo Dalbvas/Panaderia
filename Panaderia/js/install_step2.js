@@ -18,7 +18,7 @@
                 },
                 messages: {
                     name: {
-                        required: "Please Enter The Database Name",
+                        required: "Ingres nombre de la base de datos",
                         minlength: "Your Database must consist of at least 3 characters"
                     }
                 }

@@ -85,7 +85,7 @@ include_once("init.php");
 
                 <div class="content-module-heading cf">
 
-                    <h3 class="fl">Agregar Stock </h3>
+                    <h3 class="fl">Agregar Venta </h3>
                     <span class="fr expand-collapse-text">Click para cerrar</span>
                     <span class="fr expand-collapse-text initial-expand">Click para expandir</span>
 

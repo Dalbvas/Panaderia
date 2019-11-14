@@ -40,9 +40,9 @@ include_once("init.php");
             <li><a href="view_customers.php" class="active-tab customers-tab">Clientes</a></li>
             <li><a href="view_purchase.php" class="purchase-tab">Compras</a></li>
             <li><a href="view_supplier.php" class="  supplier-tab">Proveedor</a></li>
-            <li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
-            <li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-            <li><a href="view_report.php" class="report-tab">Reports</a></li>
+            <li><a href="view_product.php" class="stock-tab">Stocks / Productos</a></li>
+            <li><a href="view_payments.php" class="payment-tab">Inventario</a></li>
+            <li><a href="view_report.php" class="report-tab">Reportes</a></li>
         </ul>
         <!-- end tabs -->
 

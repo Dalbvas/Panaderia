@@ -109,7 +109,7 @@ include_once("init.php");
                                                value="Buscar">
                         </form>
                         <form action="" method="get" name="limit_go">
-                            Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit"
+                            Pagina por Registro<input name="limit" type="text" class="round my_text_box" id="search_limit"
                                                   style="margin-left:5px;"
                                                   value="<?php if (isset($_GET['limit'])) echo $_GET['limit']; else echo "10"; ?>"
                                                   size="3" maxlength="3">
@@ -253,11 +253,11 @@ include_once("init.php");
 
                                     if ($page > 1)
 
-                                        $pagination .= "<a href=\"view_sales.php?page=$prev&limit=$limit\" class=my_pagination >Previous</a>";
+                                        $pagination .= "<a href=\"view_sales.php?page=$prev&limit=$limit\" class=my_pagination >Previo</a>";
 
                                     else
 
-                                        $pagination .= "<span class=my_pagination>Previous</span>";
+                                        $pagination .= "<span class=my_pagination>Previo</span>";
 
 
                                     //pages
@@ -363,11 +363,11 @@ include_once("init.php");
 
                                     if ($page < $counter - 1)
 
-                                        $pagination .= "<a href=\"view_sales.php?page=$next&limit=$limit\" class=my_pagination>Next</a>";
+                                        $pagination .= "<a href=\"view_sales.php?page=$next&limit=$limit\" class=my_pagination>Siguiente</a>";
 
                                     else
 
-                                        $pagination .= "<span class= my_pagination >Next</span>";
+                                        $pagination .= "<span class= my_pagination >Siguiente</span>";
 
                                     $pagination .= "</div>\n";
 

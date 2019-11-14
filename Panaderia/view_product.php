@@ -43,7 +43,7 @@ include_once("init.php");
                 <li><a href="view_purchase.php" class=" purchase-tab">Compras</a></li>
                 <li><a href="view_supplier.php" class=" supplier-tab">Proveedores</a></li>
                 <li><a href="view_product.php" class="active-tab stock-tab">Stocks / Productos</a></li>
-                <li><a href="view_payments.php" class="payment-tab">Pagos</a></li>
+                <li><a href="view_payments.php" class="payment-tab">Inventario</a></li>
                 <li><a href="view_report.php" class="report-tab">Reportes</a></li>
                 </ul>
                 <!-- end tabs -->

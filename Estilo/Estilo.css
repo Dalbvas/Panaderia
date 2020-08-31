@@ -1,0 +1,106 @@
+/*Importamos fuentes desde google*/
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+body{
+    background-color: #F8F4E9;
+}
+
+.imag{
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  left: 1200px;
+}
+
+.imag img{
+    width: 110px;
+}
+
+h1{
+    color: #000000;
+    font: 200% sans-serif;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+header nav{
+    background-color: transparent;
+    color: black;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    font: 110% sans-serif;
+    border: solid #000000;
+    
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li a{
+    padding: 10px 10px;
+    display: block;
+    color: aliceblue;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    background: white;
+}
+.mar{
+    position: relative;
+}
+
+.slider{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 100%;
+
+    animation: cambio 30s infinite;
+}
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider img{
+    width: 1280px;
+    height: 500px;
+}
+
+@keyframes cambio{
+    0%  {margin-left: 0; }
+    20% {margin-left: 0; }
+
+    25% {margin-left: -100%; }
+    45% {margin-left: -100%; }
+}
+
+.form-div{
+    margin: 50px auto 50px;
+    padding: 25px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-family: 'Lora',serif;
+    margin-top: 100px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+
+
